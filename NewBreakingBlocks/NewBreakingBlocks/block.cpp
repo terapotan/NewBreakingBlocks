@@ -11,5 +11,10 @@ block::~block()
 }
 
 void block::blockPaint() {
-	LoadGraphScreen(100, 100, "../.././resource/block.png", TRUE);
+	LoadGraphScreen(blockLeftupCoordX,blockLeftupCoordY, "../.././resource/block.png", TRUE);
+}
+
+void block::setBlockCoordinate(int x, int y) {
+	this->blockLeftupCoordX = x;
+	this->blockLeftupCoordY = y;
 }
