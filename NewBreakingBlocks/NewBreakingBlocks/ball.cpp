@@ -14,7 +14,9 @@ void ball::ballPaint() {
 	LoadGraphScreen(ballLeftupCoordX, ballLeftupCoordY, "../.././resource/ball.png", TRUE);
 }
 
-void ball::setBallCoordinate(int x, int y) {
+
+
+void ball::setObjectCoordinate(int x, int y) {
 	this->ballLeftupCoordX = x;
 	this->ballLeftupCoordY = y;
 }

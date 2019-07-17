@@ -1,5 +1,7 @@
 #pragma once
-class ball
+#include "objectsOnTheScreen.h"
+
+class ball: public objectsOnTheScreen
 {
 private:
 	int ballLeftupCoordX;
@@ -7,7 +9,7 @@ private:
 public:
 	ball();
 	void ballPaint();
-	void setBallCoordinate(int x, int y);
+	void setObjectCoordinate(int x, int y) override;
 	virtual ~ball();
 };
 

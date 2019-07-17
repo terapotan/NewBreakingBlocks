@@ -1,5 +1,7 @@
 #pragma once
-class block
+#include "objectsOnTheScreen.h"
+
+class block : public objectsOnTheScreen
 {
 private:
 	int blockLeftupCoordX;
@@ -7,7 +9,7 @@ private:
 public:
 	block();
 	void blockPaint();
-	void setBlockCoordinate(int x, int y);
+	void setObjectCoordinate(int x, int y) override;
 	virtual ~block();
 };
 
