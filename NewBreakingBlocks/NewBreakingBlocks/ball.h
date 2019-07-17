@@ -8,8 +8,8 @@ private:
 	int ballLeftupCoordY;
 public:
 	ball();
-	void ballPaint();
 	void setObjectCoordinate(int x, int y) override;
+	void objectPaint() override;
 	virtual ~ball();
 };
 

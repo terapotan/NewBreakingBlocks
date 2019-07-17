@@ -8,8 +8,8 @@ private:
 	int barLeftupCoordY;
 public:
 	bar();
-	void barPaint();
 	void setObjectCoordinate(int x, int y) override;
+	void objectPaint() override;
 	virtual ~bar();
 };
 
