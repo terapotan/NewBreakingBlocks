@@ -1,8 +1,11 @@
 import unittest
 
 class mainTest(unittest.TestCase):
-    def test_checkShowbarBlockBallSingleRow(self):
-        self.assertEqual(input("ボール、バー、ブロックが縦一列に表示されている。(y/n)"),'y')
+    def test_showBallOnTheDisplay(self):
+        self.assertEqual(input("ボールが表示されたか(y/n)"),'y')
+    def test_checkBallMoveToEdgeOfScreen(self):
+        self.assertEqual(input("ボールが端から端まで動いたか(y/n)"),'y')
+    
 
 
 # ほかのファイルからimportされたときにテストが実行されないようにする
