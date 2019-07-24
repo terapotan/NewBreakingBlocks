@@ -155,11 +155,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ball.h" />
+    <ClInclude Include="bar.h" />
+    <ClInclude Include="block.h" />
+    <ClInclude Include="objectsOnTheScreen.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ball.cpp" />
+    <ClCompile Include="bar.cpp" />
+    <ClCompile Include="block.cpp" />
     <ClCompile Include="DxLibProjectTemp.cpp" />
+    <ClCompile Include="objectsOnTheScreen.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
