@@ -1,5 +1,5 @@
 #include "ball.h"
-
+#include "imageLoadFailureExpection.h"
 
 ball::ball()
 {
@@ -9,7 +9,24 @@ ball::ball()
 	//3:円の直径が画像の横幅(もしくは縦幅)に一致していること
 	//2が満たされないと画像の透過処理が行われない可能性があります
 	//1と3が満たされないと当たり判定処理が正しく行われない可能性があります
+
+	//FIXME:画像読み込み失敗及び画像形式不一致のエラーに対応していない
+	//例外を用いてエラーメッセージを表示するようにしなければならない
+
 	ballImageHandle = LoadGraph("../.././resource/ball.png");
+
+	if (ballImageHandle == -1) {
+		imageLoadFailureExpection imageLoadInstance;
+		throw imageLoadInstance;
+	}
+	
+
+
+	int ballImageSizeX, ballImageSizeY;
+	GetGraphSize(ballImageHandle, &ballImageSizeX, &ballImageSizeY);
+
+	ballRadius_Pixel = ballImageSizeX / 2;
+
 }
 
 ball::ball(int ballLeftupCoordX, int ballLeftupCoordY) : ball()
@@ -32,6 +49,11 @@ void ball::setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFram
 {
 	this->ballVelocityX_PerFrame = ballVelocityX_PerFrame;
 	this->ballVelocityY_PerFrame = ballVelocityY_PerFrame;
+}
+
+int ball::getBallRadiusPixel()
+{
+	return this->ballRadius_Pixel;
 }
 
 void ball::moveBallAtTheSetVelocity()

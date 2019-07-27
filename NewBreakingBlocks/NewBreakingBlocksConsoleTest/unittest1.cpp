@@ -1,9 +1,9 @@
-#include "stdafx.h"
 #include "CppUnitTest.h"
+#include "../NewBreakingBlocksConsole/Tested.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace NewBreakingBlocksTest
+namespace NewBreakingBlocksConsoleTest
 {		
 	TEST_CLASS(UnitTest1)
 	{
@@ -11,7 +11,7 @@ namespace NewBreakingBlocksTest
 		
 		TEST_METHOD(TestMethod1)
 		{
-			// TODO: テスト コードをここに挿入します
+			Assert::AreEqual(test(1, 2), 4);
 		}
 
 	};
