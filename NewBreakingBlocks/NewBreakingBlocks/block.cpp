@@ -3,6 +3,9 @@
 
 block::block()
 {
+	//FIXME:‰æ‘œ“Ç‚İ‚İ¸”s‚Ìˆ—‚ªÀ‘•‚³‚ê‚Ä‚¢‚È‚¢
+	//‰æ‘œ“Ç‚İ‚İ¸”s‚ÍimageLoadFailuereExpection—áŠO‚ğ‘—o‚·‚é‚æ‚¤‚É‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
+
 	blockImageHandle = LoadGraph("../.././resource/block.png");
 }
 

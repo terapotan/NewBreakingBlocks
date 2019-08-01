@@ -10,18 +10,15 @@ ball::ball()
 	//2が満たされないと画像の透過処理が行われない可能性があります
 	//1と3が満たされないと当たり判定処理が正しく行われない可能性があります
 
-	//FIXME:画像読み込み失敗及び画像形式不一致のエラーに対応していない
-	//例外を用いてエラーメッセージを表示するようにしなければならない
-
 	ballImageHandle = LoadGraph("../.././resource/ball.png");
 
 	if (ballImageHandle == -1) {
 		imageLoadFailureExpection imageLoadInstance;
 		throw imageLoadInstance;
 	}
+
+
 	
-
-
 	int ballImageSizeX, ballImageSizeY;
 	GetGraphSize(ballImageHandle, &ballImageSizeX, &ballImageSizeY);
 
