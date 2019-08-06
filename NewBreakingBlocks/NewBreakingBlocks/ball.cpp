@@ -22,7 +22,7 @@ ball::ball()
 	int ballImageSizeX, ballImageSizeY;
 	GetGraphSize(ballImageHandle, &ballImageSizeX, &ballImageSizeY);
 
-	ballRadius_Pixel = ballImageSizeX / 2;
+	ballDiamater_Pixel = ballImageSizeX;
 
 }
 
@@ -48,9 +48,9 @@ void ball::setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFram
 	this->ballVelocityY_PerFrame = ballVelocityY_PerFrame;
 }
 
-int ball::getBallRadiusPixel()
+int ball::getBallDiamaterPixel()
 {
-	return this->ballRadius_Pixel;
+	return this->ballDiamater_Pixel;
 }
 
 void ball::moveBallAtTheSetVelocity()
