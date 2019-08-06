@@ -158,6 +158,7 @@
     <ClInclude Include="ball.h" />
     <ClInclude Include="bar.h" />
     <ClInclude Include="block.h" />
+    <ClInclude Include="hitJudgementBetweenObjects.h" />
     <ClInclude Include="imageLoadFailureExpection.h" />
     <ClInclude Include="objectsOnTheScreen.h" />
     <ClInclude Include="stdafx.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="bar.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="DxLibProjectTemp.cpp" />
+    <ClCompile Include="hitJudgementBetweenObjects.cpp" />
     <ClCompile Include="imageLoadFailureExpection.cpp" />
     <ClCompile Include="objectsOnTheScreen.cpp" />
     <ClCompile Include="stdafx.cpp">
