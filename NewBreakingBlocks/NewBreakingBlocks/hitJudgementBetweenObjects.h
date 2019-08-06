@@ -1,8 +1,16 @@
 #pragma once
+typedef struct rectElements {
+	int rectLeftUpCoordX;
+	int rectLeftUpCoordY;
+	int rectWidth;
+	int rectHeight;
+}rectElements;
+
+
 class hitJudgementBetweenObjects
 {
 public:
-	bool hitJudgeRectAndRect(int sx_one, int sy_one, int width_one, int height_one, int sx_two, int sy_two, int width_two, int height_two);
+	bool hitJudgeRectAndRect(const rectElements& firstRect, const rectElements& secondRect);
 	hitJudgementBetweenObjects();
 	~hitJudgementBetweenObjects();
 };
