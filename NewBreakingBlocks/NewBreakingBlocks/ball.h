@@ -13,6 +13,8 @@ public:
 	ball();
 	ball(int ballLeftupCoordX, int ballLeftupCoordY);
 	void setObjectCoordinate(int x, int y) override;
+	int getObjectCoordinateX();
+	int getObjectCoordinateY();
 	void setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFrame);
 	int getBallDiamaterPixel();
 	void moveBallAtTheSetVelocity();

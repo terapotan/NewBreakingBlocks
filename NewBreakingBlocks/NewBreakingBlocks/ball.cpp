@@ -42,6 +42,16 @@ void ball::setObjectCoordinate(int x, int y) {
 	this->ballLeftupCoordY = y;
 }
 
+int ball::getObjectCoordinateX()
+{
+	return this->ballLeftupCoordX;
+}
+
+int ball::getObjectCoordinateY()
+{
+	return this->ballLeftupCoordY;
+}
+
 void ball::setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFrame)
 {
 	this->ballVelocityX_PerFrame = ballVelocityX_PerFrame;

@@ -36,6 +36,16 @@ void bar::setObjectCoordinate(int x, int y) {
 	this->barLeftupCoordY = y;
 }
 
+int bar::getObjectCoordinateX()
+{
+	return this->barLeftupCoordX;
+}
+
+int bar::getObjectCoordinateY()
+{
+	return this->barLeftupCoordY;
+}
+
 int bar::getBarWidthPixel()
 {
 	return this->barWidth_Pixel;

@@ -14,6 +14,8 @@ public:
 	bar();
 	bar(int barLeftupCoordX, int barLeftupCoordY);
 	void setObjectCoordinate(int x, int y) override;
+	int getObjectCoordinateX();
+	int getObjectCoordinateY();
 	int getBarWidthPixel();
 	int getBarHeightPixel();
 	void objectPaint() override;
