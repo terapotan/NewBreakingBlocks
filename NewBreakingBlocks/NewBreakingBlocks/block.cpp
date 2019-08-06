@@ -1,5 +1,5 @@
 #include "block.h"
-
+#include "imageLoadFailureExpection.h"
 
 block::block()
 {
@@ -7,6 +7,11 @@ block::block()
 	//‰æ‘œ“Ç‚İ‚İ¸”s‚ÍimageLoadFailuereExpection—áŠO‚ğ‘—o‚·‚é‚æ‚¤‚É‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
 
 	blockImageHandle = LoadGraph("../.././resource/block.png");
+
+	if (blockImageHandle == -1) {
+		imageLoadFailureExpection imageLoadInstance;
+		throw imageLoadInstance;
+	}
 }
 
 
