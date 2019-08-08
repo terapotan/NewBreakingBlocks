@@ -1,7 +1,6 @@
 #pragma once
-#include "objectsOnTheScreen.h"
 
-class bar : public objectsOnTheScreen
+class bar
 {
 private:
 	int barLeftupCoordX;
@@ -13,12 +12,12 @@ private:
 public:
 	bar();
 	bar(int barLeftupCoordX, int barLeftupCoordY);
-	void setObjectCoordinate(int x, int y) override;
+	void setObjectCoordinate(int x, int y);
 	int getObjectCoordinateX();
 	int getObjectCoordinateY();
 	int getBarWidthPixel();
 	int getBarHeightPixel();
-	void objectPaint() override;
+	void objectPaint();
 	virtual ~bar();
 };
 

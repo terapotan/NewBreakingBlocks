@@ -1,6 +1,5 @@
 #pragma once
-#include "objectsOnTheScreen.h"
-class ball: public objectsOnTheScreen
+class ball
 {
 private:
 	int ballLeftupCoordX;//画面右方向を正とする
@@ -12,13 +11,16 @@ private:
 public:
 	ball();
 	ball(int ballLeftupCoordX, int ballLeftupCoordY);
-	void setObjectCoordinate(int x, int y) override;
+	//FIXME:objectsOnTheScreenの存在価値がないような気がする
+	//本当にobjectsOnTheScreenを用意する必要があるか判断し、必要ならそうなるように変更
+	//そうでないなら、削除・変更を行いたい
+	void setObjectCoordinate(int x, int y);
 	int getObjectCoordinateX();
 	int getObjectCoordinateY();
 	void setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFrame);
 	int getBallDiamaterPixel();
 	void moveBallAtTheSetVelocity();
-	void objectPaint() override;
+	void objectPaint();
 	virtual ~ball();
 };
 
