@@ -28,7 +28,7 @@ ball::ball()
 
 ball::ball(int ballLeftupCoordX, int ballLeftupCoordY) : ball()
 {
-	this->setObjectCoordinate(ballLeftupCoordX, ballLeftupCoordY);
+	this->setBallCoordinate(ballLeftupCoordX, ballLeftupCoordY);
 }
 
 
@@ -37,17 +37,17 @@ ball::~ball()
 	DeleteGraph(ballImageHandle);
 }
 
-void ball::setObjectCoordinate(int x, int y) {
+void ball::setBallCoordinate(int x, int y) {
 	this->ballLeftupCoordX = x;
 	this->ballLeftupCoordY = y;
 }
 
-int ball::getObjectCoordinateX()
+int ball::getBallCoordinateX()
 {
 	return this->ballLeftupCoordX;
 }
 
-int ball::getObjectCoordinateY()
+int ball::getBallCoordinateY()
 {
 	return this->ballLeftupCoordY;
 }
@@ -70,6 +70,6 @@ void ball::moveBallAtTheSetVelocity()
 }
 
 
-void ball::objectPaint() {
+void ball::ballPaint() {
 	DrawGraph(ballLeftupCoordX, ballLeftupCoordY, ballImageHandle, TRUE);
 }

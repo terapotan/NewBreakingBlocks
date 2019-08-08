@@ -8,8 +8,8 @@ private:
 	int blockImageHandle;
 public:
 	block();
-	void setObjectCoordinate(int x, int y);
-	void objectPaint();
+	void setBlockCoordinate(int x, int y);
+	void blockPaint();
 	virtual ~block();
 };
 

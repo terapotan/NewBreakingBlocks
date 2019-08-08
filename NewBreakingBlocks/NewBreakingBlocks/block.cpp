@@ -22,12 +22,12 @@ block::~block()
 
 
 
-void block::setObjectCoordinate(int x, int y) {
+void block::setBlockCoordinate(int x, int y) {
 	this->blockLeftupCoordX = x;
 	this->blockLeftupCoordY = y;
 }
 
 
-void block::objectPaint() {
+void block::blockPaint() {
 	DrawGraph(blockLeftupCoordX, blockLeftupCoordY, blockImageHandle, TRUE);
 }

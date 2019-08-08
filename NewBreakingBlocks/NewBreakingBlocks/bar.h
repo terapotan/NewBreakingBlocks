@@ -12,12 +12,12 @@ private:
 public:
 	bar();
 	bar(int barLeftupCoordX, int barLeftupCoordY);
-	void setObjectCoordinate(int x, int y);
-	int getObjectCoordinateX();
-	int getObjectCoordinateY();
+	void setBarCoordinate(int x, int y);
+	int getBarCoordinateX();
+	int getBarCoordinateY();
 	int getBarWidthPixel();
 	int getBarHeightPixel();
-	void objectPaint();
+	void barPaint();
 	virtual ~bar();
 };
 

@@ -31,17 +31,17 @@ bar::~bar()
 
 
 
-void bar::setObjectCoordinate(int x, int y) {
+void bar::setBarCoordinate(int x, int y) {
 	this->barLeftupCoordX = x;
 	this->barLeftupCoordY = y;
 }
 
-int bar::getObjectCoordinateX()
+int bar::getBarCoordinateX()
 {
 	return this->barLeftupCoordX;
 }
 
-int bar::getObjectCoordinateY()
+int bar::getBarCoordinateY()
 {
 	return this->barLeftupCoordY;
 }
@@ -56,6 +56,6 @@ int bar::getBarHeightPixel()
 	return this->barHeight_Pixel;
 }
 
-void bar::objectPaint() {
+void bar::barPaint() {
 	DrawGraph(barLeftupCoordX, barLeftupCoordY, barImageHandle,TRUE);
 }
