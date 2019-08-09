@@ -9,9 +9,11 @@ namespace NewBreakingBlocksConsoleTest
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(checkHitJudgementOfCircleAndRect)
 		{
-			Assert::AreEqual(test(1, 2), 4);
+
+
+
 		}
 
 	};
