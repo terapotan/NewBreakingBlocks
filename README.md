@@ -6,7 +6,7 @@
 WindowsPC上で動作するブロック崩しゲームです。  
 アイテムや複雑なギミックは**一切**なく非常にシンプルなブロック崩しゲームとなっています。  
 ## 進捗
-![alt](./Document/prealpha31DemoImage.png)
+![alt](./Document/prealpha31DemoImage.PNG)
 
 1. バーに幅と高さを指定できるようにしました
 2. 矩形同士の当たり判定を行う関数の仮実装を行いました(実際の当たり判定機能はprealpha4.1でリリース予定です。)
