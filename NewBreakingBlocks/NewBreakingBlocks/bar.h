@@ -1,16 +1,23 @@
 #pragma once
-#include "objectsOnTheScreen.h"
 
-class bar : public objectsOnTheScreen
+class bar
 {
 private:
 	int barLeftupCoordX;
 	int barLeftupCoordY;
 	int barImageHandle;
+	int barWidth_Pixel;
+	int barHeight_Pixel;
+
 public:
 	bar();
-	void setObjectCoordinate(int x, int y) override;
-	void objectPaint() override;
+	bar(int barLeftupCoordX, int barLeftupCoordY);
+	void setBarCoordinate(int x, int y);
+	int getBarCoordinateX();
+	int getBarCoordinateY();
+	int getBarWidthPixel();
+	int getBarHeightPixel();
+	void barPaint();
 	virtual ~bar();
 };
 

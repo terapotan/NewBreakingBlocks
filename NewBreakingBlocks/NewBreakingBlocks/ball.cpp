@@ -22,13 +22,13 @@ ball::ball()
 	int ballImageSizeX, ballImageSizeY;
 	GetGraphSize(ballImageHandle, &ballImageSizeX, &ballImageSizeY);
 
-	ballRadius_Pixel = ballImageSizeX / 2;
+	ballDiamater_Pixel = ballImageSizeX;
 
 }
 
 ball::ball(int ballLeftupCoordX, int ballLeftupCoordY) : ball()
 {
-	this->setObjectCoordinate(ballLeftupCoordX, ballLeftupCoordY);
+	this->setBallCoordinate(ballLeftupCoordX, ballLeftupCoordY);
 }
 
 
@@ -37,9 +37,19 @@ ball::~ball()
 	DeleteGraph(ballImageHandle);
 }
 
-void ball::setObjectCoordinate(int x, int y) {
+void ball::setBallCoordinate(int x, int y) {
 	this->ballLeftupCoordX = x;
 	this->ballLeftupCoordY = y;
+}
+
+int ball::getBallCoordinateX()
+{
+	return this->ballLeftupCoordX;
+}
+
+int ball::getBallCoordinateY()
+{
+	return this->ballLeftupCoordY;
 }
 
 void ball::setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFrame)
@@ -48,9 +58,9 @@ void ball::setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFram
 	this->ballVelocityY_PerFrame = ballVelocityY_PerFrame;
 }
 
-int ball::getBallRadiusPixel()
+int ball::getBallDiamaterPixel()
 {
-	return this->ballRadius_Pixel;
+	return this->ballDiamater_Pixel;
 }
 
 void ball::moveBallAtTheSetVelocity()
@@ -60,6 +70,6 @@ void ball::moveBallAtTheSetVelocity()
 }
 
 
-void ball::objectPaint() {
+void ball::ballPaint() {
 	DrawGraph(ballLeftupCoordX, ballLeftupCoordY, ballImageHandle, TRUE);
 }
