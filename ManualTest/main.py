@@ -5,8 +5,14 @@ class mainTest(unittest.TestCase):
         self.assertEqual(input("ボールが表示されたか(y/n)"),'y')
     def test_showBarOnTheDisplay(self):
         self.assertEqual(input('バーが表示されたか(y/n)'),'y')
-    def test_moveBarDisplayOfEdge(self):
-        self.assertEqual(input('バーが画面の端から端まで動いているか(y/n)'),'y')
+    def test_inputKeyAndMoveLeftBar(self):
+        self.assertEqual(input('バーが左矢印を押したら左にいくか(y/n)'),'y')
+    def test_inputKeyAndMoveRightBar(self):
+        self.assertEqual(input('バーが右矢印を押したら右に行くか(y/n)'),'y')
+    def test_checkCollectBallAndBarNoCollision(self):
+        self.assertEqual(input('ボールとバーが重なっていない時にcollisionCheck:0となっているか(y/n)'),'y')
+    def test_checkCollectBallAndBarCollision(self):
+        self.assertEqual(input('ボールとバーが重なっているときにcollisionCheck:1となっているか(y/n)'),'y')
 #    def test_showBarAndBallOverlap(self):
 #        self.assertEqual(input('ボールとバーが重なって表示されているか(y/n)'),'y')
 #    def test_checkCollectBallAndBarCollision(self):

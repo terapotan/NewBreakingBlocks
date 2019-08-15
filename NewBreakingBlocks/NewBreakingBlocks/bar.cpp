@@ -56,7 +56,7 @@ int bar::getBarHeightPixel()
 	return this->barHeight_Pixel;
 }
 
-void bar::setBallVelocity(int ballVelocityX_PerFrame)
+void bar::setBarVelocity(int ballVelocityX_PerFrame)
 {
 	this->barVelocityX_PerFrame = ballVelocityX_PerFrame;
 }
