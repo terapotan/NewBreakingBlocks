@@ -56,6 +56,16 @@ int bar::getBarHeightPixel()
 	return this->barHeight_Pixel;
 }
 
+void bar::setBallVelocity(int ballVelocityX_PerFrame)
+{
+	this->barVelocityX_PerFrame = ballVelocityX_PerFrame;
+}
+
+void bar::moveBarAtTheSetVelocity()
+{
+	barLeftupCoordX += barVelocityX_PerFrame;
+}
+
 void bar::barPaint() {
 	DrawGraph(barLeftupCoordX, barLeftupCoordY, barImageHandle,TRUE);
 }

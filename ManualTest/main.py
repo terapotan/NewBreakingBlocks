@@ -5,10 +5,12 @@ class mainTest(unittest.TestCase):
         self.assertEqual(input("ボールが表示されたか(y/n)"),'y')
     def test_showBarOnTheDisplay(self):
         self.assertEqual(input('バーが表示されたか(y/n)'),'y')
-    def test_showBarAndBallOverlap(self):
-        self.assertEqual(input('ボールとバーが重なって表示されているか(y/n)'),'y')
-    def test_checkCollectBallAndBarCollision(self):
-        self.assertEqual(input('collisionCheck:1と表示されているか(y/n)'),'y')
+    def test_moveBarDisplayOfEdge(self):
+        self.assertEqual(input('バーが画面の端から端まで動いているか(y/n)'),'y')
+#    def test_showBarAndBallOverlap(self):
+#        self.assertEqual(input('ボールとバーが重なって表示されているか(y/n)'),'y')
+#    def test_checkCollectBallAndBarCollision(self):
+#        self.assertEqual(input('collisionCheck:1と表示されているか(y/n)'),'y')
 #    def test_checkShowImageLoadError(self):
 #       self.assertEqual(input('ボールの画像ファイル読み込みに失敗したときにエラーメッセージが出るか(y/n)'),'y')
 #    def test_checkCollectErrorMessage(self):
