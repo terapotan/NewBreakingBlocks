@@ -36,6 +36,9 @@
     <ClInclude Include="hitJudgementBetweenObjects.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="realAndVirtualCoordinateSettings.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

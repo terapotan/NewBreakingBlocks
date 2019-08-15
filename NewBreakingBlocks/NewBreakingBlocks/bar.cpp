@@ -1,10 +1,10 @@
 #include "bar.h"
 #include "imageLoadFailureExpection.h"
+#include "realAndVirtualCoordinateSettings.h"
+
 
 bar::bar()
 {
-	//FIXME:‰æ‘œ“Ç‚İ‚İ¸”s‚Ìˆ—‚ªÀ‘•‚³‚ê‚Ä‚¢‚È‚¢
-	//‰æ‘œ“Ç‚İ‚İ¸”s‚ÍimageLoadFailuereExpection—áŠO‚ğ‘—o‚·‚é‚æ‚¤‚É‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
 	barImageHandle = LoadGraph("../.././resource/bar.png");
 
 	if (barImageHandle == -1) {
@@ -67,5 +67,6 @@ void bar::moveBarAtTheSetVelocity()
 }
 
 void bar::barPaint() {
-	DrawGraph(barLeftupCoordX, barLeftupCoordY, barImageHandle,TRUE);
+	DrawGraph(convertToRealCoordinateX(barLeftupCoordX),
+		convertToRealCoordinateY(barLeftupCoordY), barImageHandle,TRUE);
 }
