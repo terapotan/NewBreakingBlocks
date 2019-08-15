@@ -70,3 +70,5 @@ void bar::barPaint() {
 	DrawGraph(convertToRealCoordinateX(barLeftupCoordX),
 		convertToRealCoordinateY(barLeftupCoordY), barImageHandle,TRUE);
 }
+
+
