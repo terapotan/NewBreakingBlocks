@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NewBreakingBlocks", "NewBreakingBlocks\NewBreakingBlocks.vcxproj", "{531A0AC8-AA25-4E18-B8C9-B7BB2B8F6BFE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NewBreakingBlocksConsole", "NewBreakingBlocksConsole\NewBreakingBlocksConsole.vcxproj", "{5E00DCB2-B47B-4F69-B5E6-0759B61C9F86}"
+	ProjectSection(ProjectDependencies) = postProject
+		{531A0AC8-AA25-4E18-B8C9-B7BB2B8F6BFE} = {531A0AC8-AA25-4E18-B8C9-B7BB2B8F6BFE}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NewBreakingBlocksConsoleTest", "NewBreakingBlocksConsoleTest\NewBreakingBlocksConsoleTest.vcxproj", "{F3620FFA-0FCE-413B-B13A-84D2B75709FA}"
 EndProject

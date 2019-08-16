@@ -158,6 +158,7 @@
     <ClInclude Include="ball.h" />
     <ClInclude Include="bar.h" />
     <ClInclude Include="block.h" />
+    <ClInclude Include="realAndVirtualCoordinateSettings.h" />
     <ClInclude Include="hitJudgementBetweenObjects.h" />
     <ClInclude Include="imageLoadFailureExpection.h" />
     <ClInclude Include="stdafx.h" />
