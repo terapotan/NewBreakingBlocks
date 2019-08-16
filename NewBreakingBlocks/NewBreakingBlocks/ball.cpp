@@ -1,5 +1,6 @@
 #include "ball.h"
 #include "imageLoadFailureExpection.h"
+#include "realAndVirtualCoordinateSettings.h"
 
 ball::ball()
 {
@@ -71,5 +72,6 @@ void ball::moveBallAtTheSetVelocity()
 
 
 void ball::ballPaint() {
-	DrawGraph(ballLeftupCoordX, ballLeftupCoordY, ballImageHandle, TRUE);
+	DrawGraph(convertToRealCoordinateX(ballLeftupCoordX), 
+		convertToRealCoordinateY(ballLeftupCoordY), ballImageHandle, TRUE);
 }
