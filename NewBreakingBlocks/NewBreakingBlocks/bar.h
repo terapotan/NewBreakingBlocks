@@ -1,6 +1,7 @@
 #pragma once
+#include "rectObject.h"
 
-class bar
+class bar : public rectObject
 {
 private:
 	//物体の位置や速度指定に使う座標は実際の座標ではなく
