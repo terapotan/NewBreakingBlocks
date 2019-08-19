@@ -8,8 +8,8 @@ private:
 	//virtualDrawScreenWidth,Heightの仮想座標である。
 	//メンバ変数に格納されている座標の値も仮想座標である。
 	//仮想座標は描画時に実座標に変換される。
+	//画像の大きさ等の数値も仮想座標である
 
-	//FIXME:仮想座標だとわかるように変数の名前を変更したほうがいい
 
 	int ballLeftupCoordX;//画面右方向を正とする
 	int ballLeftupCoordY;//画面下方向を正とする

@@ -12,8 +12,12 @@ bar::bar()
 		throw imageLoadInstance;
 	}
 
+	int tmpWidth, tmpHeight;
+	
+	GetGraphSize(barImageHandle, &tmpWidth, &tmpHeight);
+	this->barWidth_Pixel = convertToVirtualCoordinate(tmpWidth);
+	this->barHeight_Pixel = convertToVirtualCoordinate(tmpHeight);
 
-	GetGraphSize(barImageHandle, &(this->barWidth_Pixel), &(this->barHeight_Pixel));
 }
 
 bar::bar(int barLeftupCoordX, int barLeftupCoordY) : bar()
@@ -67,8 +71,8 @@ void bar::moveBarAtTheSetVelocity()
 }
 
 void bar::barPaint() {
-	DrawGraph(convertToRealCoordinateX(barLeftupCoordX),
-		convertToRealCoordinateY(barLeftupCoordY), barImageHandle,TRUE);
+	DrawGraph(convertToRealCoordinate(barLeftupCoordX),
+		convertToRealCoordinate(barLeftupCoordY), barImageHandle,TRUE);
 }
 
 

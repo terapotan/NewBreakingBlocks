@@ -23,7 +23,7 @@ ball::ball()
 	int ballImageSizeX, ballImageSizeY;
 	GetGraphSize(ballImageHandle, &ballImageSizeX, &ballImageSizeY);
 
-	ballDiamater_Pixel = ballImageSizeX;
+	ballDiamater_Pixel = convertToVirtualCoordinate(ballImageSizeX);
 
 }
 
@@ -72,6 +72,6 @@ void ball::moveBallAtTheSetVelocity()
 
 
 void ball::ballPaint() {
-	DrawGraph(convertToRealCoordinateX(ballLeftupCoordX), 
-		convertToRealCoordinateY(ballLeftupCoordY), ballImageHandle, TRUE);
+	DrawGraph(convertToRealCoordinate(ballLeftupCoordX), 
+		convertToRealCoordinate(ballLeftupCoordY), ballImageHandle, TRUE);
 }
