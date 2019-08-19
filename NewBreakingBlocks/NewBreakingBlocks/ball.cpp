@@ -11,6 +11,8 @@ ball::ball()
 	//2が満たされないと画像の透過処理が行われない可能性があります
 	//1と3が満たされないと当たり判定処理が正しく行われない可能性があります
 
+	//FIXME:画像リソースの管理を一元化したい
+
 	ballImageHandle = LoadGraph("../.././resource/ball.png");
 
 	if (ballImageHandle == -1) {
@@ -32,6 +34,14 @@ ball::ball(int ballLeftupCoordX, int ballLeftupCoordY) : ball()
 	this->setBallCoordinate(ballLeftupCoordX, ballLeftupCoordY);
 }
 
+
+void ball::saveNowObjectStateToRectObject()
+{
+	this->rectLeftUpCoordX = this->ballLeftupCoordX;
+	this->rectLeftUpCoordY = this->ballLeftupCoordY;
+	this->rectWidth = this->ballDiamater_Pixel;
+	this->rectHeight = this->ballDiamater_Pixel;
+}
 
 ball::~ball()
 {

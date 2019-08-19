@@ -5,6 +5,7 @@
 
 bar::bar()
 {
+	//FIXME:‰æ‘œƒŠƒ\[ƒX‚ÌŠÇ—‚ðˆêŒ³‰»‚µ‚½‚¢
 	barImageHandle = LoadGraph("../.././resource/bar.png");
 
 	if (barImageHandle == -1) {
@@ -73,6 +74,14 @@ void bar::moveBarAtTheSetVelocity()
 void bar::barPaint() {
 	DrawGraph(convertToRealCoordinate(barLeftupCoordX),
 		convertToRealCoordinate(barLeftupCoordY), barImageHandle,TRUE);
+}
+
+void bar::saveNowObjectStateToRectObject()
+{
+	this->rectLeftUpCoordX = this->barLeftupCoordX;
+	this->rectLeftUpCoordY = this->barLeftupCoordY;
+	this->rectWidth = this->barWidth_Pixel;
+	this->rectHeight = this->barHeight_Pixel;
 }
 
 

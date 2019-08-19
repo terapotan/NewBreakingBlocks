@@ -20,13 +20,18 @@ private:
 public:
 	ball();
 	ball(int ballLeftupCoordX, int ballLeftupCoordY);
+
 	void setBallCoordinate(int x, int y);
 	int getBallCoordinateX();
 	int getBallCoordinateY();
-	void setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFrame);
 	int getBallDiamaterPixel();
+
+	void setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFrame);
 	void moveBallAtTheSetVelocity();
+
 	void ballPaint();
+
+	void saveNowObjectStateToRectObject() override;
 	virtual ~ball();
 };
 

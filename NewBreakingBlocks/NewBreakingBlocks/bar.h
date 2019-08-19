@@ -20,14 +20,20 @@ private:
 public:
 	bar();
 	bar(int barLeftupCoordX, int barLeftupCoordY);
+
 	void setBarCoordinate(int x, int y);
 	int getBarCoordinateX();
 	int getBarCoordinateY();
 	int getBarWidthPixel();
 	int getBarHeightPixel();
+
 	void setBarVelocity(int ballVelocityX_PerFrame);
 	void moveBarAtTheSetVelocity();
+
 	void barPaint();
+
+	void saveNowObjectStateToRectObject() override;
+
 	virtual ~bar();
 };
 

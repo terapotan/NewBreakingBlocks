@@ -5,7 +5,19 @@
 //これをbar,ballクラスに継承させること
 class rectObject
 {
+protected:
+	int rectLeftUpCoordX;
+	int rectLeftUpCoordY;
+	int rectWidth;
+	int rectHeight;
 public:
+	//矩形オブジェクトの値にアクセスする前に
+	//この関数を呼び出すこと
+	virtual void saveNowObjectStateToRectObject() = 0;
+	int getRectLeftUpCoordX();
+	int getRectLeftUpCoordY();
+	int getRectWidth();
+	int getRectHeight();
 	rectObject();
 	~rectObject();
 };
