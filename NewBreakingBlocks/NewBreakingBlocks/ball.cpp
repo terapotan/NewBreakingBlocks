@@ -37,10 +37,10 @@ ball::ball(int ballLeftupCoordX, int ballLeftupCoordY) : ball()
 
 void ball::saveNowObjectStateToRectObject()
 {
-	this->rectLeftUpCoordX = this->ballLeftupCoordX;
-	this->rectLeftUpCoordY = this->ballLeftupCoordY;
-	this->rectWidth = this->ballDiamater_Pixel;
-	this->rectHeight = this->ballDiamater_Pixel;
+	this->rectObjectElements.rectLeftUpCoordX = this->ballLeftupCoordX;
+	this->rectObjectElements.rectLeftUpCoordY = this->ballLeftupCoordY;
+	this->rectObjectElements.rectWidth = this->ballDiamater_Pixel;
+	this->rectObjectElements.rectHeight = this->ballDiamater_Pixel;
 }
 
 ball::~ball()

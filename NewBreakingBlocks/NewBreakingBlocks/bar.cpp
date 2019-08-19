@@ -78,10 +78,10 @@ void bar::barPaint() {
 
 void bar::saveNowObjectStateToRectObject()
 {
-	this->rectLeftUpCoordX = this->barLeftupCoordX;
-	this->rectLeftUpCoordY = this->barLeftupCoordY;
-	this->rectWidth = this->barWidth_Pixel;
-	this->rectHeight = this->barHeight_Pixel;
+	this->rectObjectElements.rectLeftUpCoordX = this->barLeftupCoordX;
+	this->rectObjectElements.rectLeftUpCoordY = this->barLeftupCoordY;
+	this->rectObjectElements.rectWidth = this->barWidth_Pixel;
+	this->rectObjectElements.rectHeight = this->barHeight_Pixel;
 }
 
 

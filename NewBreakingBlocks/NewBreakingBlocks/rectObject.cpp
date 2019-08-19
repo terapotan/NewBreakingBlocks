@@ -1,24 +1,10 @@
 #include "rectObject.h"
 
 
-int rectObject::getRectLeftUpCoordX()
-{
-	return this->rectLeftUpCoordX;
-}
 
-int rectObject::getRectLeftUpCoordY()
+const rectElements& rectObject::getRectObjectElements()
 {
-	return this->rectLeftUpCoordY;
-}
-
-int rectObject::getRectWidth()
-{
-	return this->rectWidth;
-}
-
-int rectObject::getRectHeight()
-{
-	return this->rectHeight;
+	return this->rectObjectElements;
 }
 
 rectObject::rectObject()
