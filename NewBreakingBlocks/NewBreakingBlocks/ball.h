@@ -1,5 +1,7 @@
 #pragma once
 #include "rectObject.h"
+#include "playDisplayImageManagement.h"
+
 class ball : public rectObject
 {
 private:
@@ -18,9 +20,8 @@ private:
 	int ballDiamater_Pixel;
 	int ballImageHandle;
 public:
-	ball();
-	ball(int ballLeftupCoordX, int ballLeftupCoordY);
-
+	ball(const playDisplayImageManagement& playInstance);
+	ball(int ballLeftupCoordX, int ballLeftupCoordY, const playDisplayImageManagement& playInstance);
 	void setBallCoordinate(int x, int y);
 	int getBallCoordinateX();
 	int getBallCoordinateY();

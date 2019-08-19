@@ -2,7 +2,7 @@
 #include "imageLoadFailureExpection.h"
 #include "realAndVirtualCoordinateSettings.h"
 
-ball::ball()
+ball::ball(const playDisplayImageManagement& playInstance)
 {
 	//ボールの画像として読み込む画像は以下の要件を満たしている必要があります
 	//1:画像の縦幅と横幅が同じ値であり読み込む画像に描画されている図形が円であること
@@ -11,29 +11,19 @@ ball::ball()
 	//2が満たされないと画像の透過処理が行われない可能性があります
 	//1と3が満たされないと当たり判定処理が正しく行われない可能性があります
 
-	//FIXME:画像リソースの管理を一元化したい
 
-	ballImageHandle = LoadGraph("../.././resource/ball.png");
+	this->ballImageHandle = playInstance.getBallImageHandle();
 
-	if (ballImageHandle == -1) {
-		imageLoadFailureExpection imageLoadInstance;
-		throw imageLoadInstance;
-	}
-
-
-	
 	int ballImageSizeX, ballImageSizeY;
 	GetGraphSize(ballImageHandle, &ballImageSizeX, &ballImageSizeY);
 
 	ballDiamater_Pixel = convertToVirtualCoordinate(ballImageSizeX);
-
 }
 
-ball::ball(int ballLeftupCoordX, int ballLeftupCoordY) : ball()
-{
+ball::ball(int ballLeftupCoordX, int ballLeftupCoordY, const playDisplayImageManagement& playInstance) : ball(playInstance){
 	this->setBallCoordinate(ballLeftupCoordX, ballLeftupCoordY);
+	this->ballImageHandle = playInstance.getBallImageHandle();
 }
-
 
 void ball::saveNowObjectStateToRectObject()
 {

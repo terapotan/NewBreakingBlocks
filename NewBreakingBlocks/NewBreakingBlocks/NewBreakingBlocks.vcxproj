@@ -158,6 +158,7 @@
     <ClInclude Include="ball.h" />
     <ClInclude Include="bar.h" />
     <ClInclude Include="block.h" />
+    <ClInclude Include="playDisplayImageManagement.h" />
     <ClInclude Include="realAndVirtualCoordinateSettings.h" />
     <ClInclude Include="hitJudgementBetweenObjects.h" />
     <ClInclude Include="imageLoadFailureExpection.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="DxLibProjectTemp.cpp" />
     <ClCompile Include="hitJudgementBetweenObjects.cpp" />
     <ClCompile Include="imageLoadFailureExpection.cpp" />
+    <ClCompile Include="playDisplayImageManagement.cpp" />
     <ClCompile Include="rectObject.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -3,25 +3,18 @@
 #include "realAndVirtualCoordinateSettings.h"
 
 
-bar::bar()
+bar::bar(const playDisplayImageManagement& playInstance)
 {
-	//FIXME:‰æ‘œƒŠƒ\[ƒX‚ÌŠÇ—‚ðˆêŒ³‰»‚µ‚½‚¢
-	barImageHandle = LoadGraph("../.././resource/bar.png");
-
-	if (barImageHandle == -1) {
-		imageLoadFailureExpection imageLoadInstance;
-		throw imageLoadInstance;
-	}
+	barImageHandle = playInstance.getBarImageHandle();
 
 	int tmpWidth, tmpHeight;
 	
 	GetGraphSize(barImageHandle, &tmpWidth, &tmpHeight);
 	this->barWidth_Pixel = convertToVirtualCoordinate(tmpWidth);
 	this->barHeight_Pixel = convertToVirtualCoordinate(tmpHeight);
-
 }
 
-bar::bar(int barLeftupCoordX, int barLeftupCoordY) : bar()
+bar::bar(int barLeftupCoordX, int barLeftupCoordY, const playDisplayImageManagement& playInstance) : bar(playInstance)
 {
 	this->barLeftupCoordX = barLeftupCoordX;
 	this->barLeftupCoordY = barLeftupCoordY;

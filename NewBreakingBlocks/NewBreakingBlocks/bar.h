@@ -1,5 +1,6 @@
 #pragma once
 #include "rectObject.h"
+#include "playDisplayImageManagement.h"
 
 class bar : public rectObject
 {
@@ -18,8 +19,8 @@ private:
 	int barHeight_Pixel;
 
 public:
-	bar();
-	bar(int barLeftupCoordX, int barLeftupCoordY);
+	bar(const playDisplayImageManagement& playInstance);
+	bar(int barLeftupCoordX, int barLeftupCoordY, const playDisplayImageManagement& playInstance);
 
 	void setBarCoordinate(int x, int y);
 	int getBarCoordinateX();
