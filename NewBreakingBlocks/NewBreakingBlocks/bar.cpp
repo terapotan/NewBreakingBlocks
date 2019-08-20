@@ -23,7 +23,6 @@ bar::bar(int barLeftupCoordX, int barLeftupCoordY, const playDisplayImageManagem
 
 bar::~bar()
 {
-	DeleteGraph(barImageHandle);
 }
 
 

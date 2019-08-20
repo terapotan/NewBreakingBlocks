@@ -35,7 +35,6 @@ void ball::saveNowObjectStateToRectObject()
 
 ball::~ball()
 {
-	DeleteGraph(ballImageHandle);
 }
 
 void ball::setBallCoordinate(int x, int y) {
