@@ -6,6 +6,6 @@ class hitJudgementBetweenObjects
 public:
 	bool hitJudgeRectAndRect(const rectElements& firstRect, const rectElements& secondRect);
 	hitJudgementBetweenObjects();
-	~hitJudgementBetweenObjects();
+	virtual ~hitJudgementBetweenObjects();
 };
 

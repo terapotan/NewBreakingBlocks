@@ -13,6 +13,13 @@ class mainTest(unittest.TestCase):
         self.assertEqual(input('ボールとバーが重なっていない時にcollisionCheck:0となっているか(y/n)'),'y')
     def test_checkCollectBallAndBarCollision(self):
         self.assertEqual(input('ボールとバーが重なっているときにcollisionCheck:1となっているか(y/n)'),'y')
+    def test_checkCollectEventCheckListContent(self):
+        self.assertEqual(input('EventCheckList:eventCheck1,eventCheck2,eventCheck3と表示されているか(y/n)'),'y')
+
+#    def test_checkCollectEventActionQueContent(self):
+#        self.assertEqual(input('EventActionQue:eventAction1,eventAction2と表示されているか(y/n)'),'y')
+#    def test_checkCallEventActionQueContent(self):
+#        self.assertEqual(input('関数呼び出し後にEventActionQue:(何も表示されない)となっているか(y/n)'),'y')
 #    def test_showBlockOnTheDisplay(self):
 #        self.assertEqual(input('ブロックが表示されたか(y/n)'),'y')
 #    def test_showBarAndBallOverlap(self):

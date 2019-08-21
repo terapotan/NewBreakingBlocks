@@ -20,6 +20,6 @@ public:
 	virtual void saveNowObjectStateToRectObject() = 0;
 	const rectElements& getRectObjectElements();
 	rectObject();
-	~rectObject();
+	virtual ~rectObject();
 };
 

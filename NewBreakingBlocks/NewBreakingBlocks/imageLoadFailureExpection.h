@@ -3,6 +3,6 @@ class imageLoadFailureExpection
 {
 public:
 	imageLoadFailureExpection();
-	~imageLoadFailureExpection();
+	virtual ~imageLoadFailureExpection();
 };
 

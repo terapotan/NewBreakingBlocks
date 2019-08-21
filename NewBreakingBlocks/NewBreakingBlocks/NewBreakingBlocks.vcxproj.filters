@@ -45,6 +45,15 @@
     <ClInclude Include="playDisplayImageManagement.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="eventOccurCheckAndExecute.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="eventOccurCheckClassInterface.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="eventExecuteClassInterface.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -72,6 +81,15 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="playDisplayImageManagement.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="eventOccurCheckAndExecute.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="eventOccurCheckClassInterface.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="eventExecuteClassInterface.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
