@@ -20,6 +20,13 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 }
 
 
+void eventOccurCheckAndExecute::executeOccurCheckClasses()
+{
+	for (const auto &e : this->executeEventOccurCheckClassesInAFrame) {
+		e->executeEventOccurCheck();
+	}
+}
+
 eventOccurCheckAndExecute::~eventOccurCheckAndExecute()
 {
 }

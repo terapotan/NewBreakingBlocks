@@ -10,6 +10,11 @@ std::string dummyEventCheck3::toStringForDebug()
 	return std::string("dummyEventCheck3");
 }
 
+std::string dummyEventCheck3::executeEventOccurCheck()
+{
+	return std::string(EXECUTE_NOTHING);
+}
+
 
 dummyEventCheck3::~dummyEventCheck3()
 {
