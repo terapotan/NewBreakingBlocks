@@ -12,7 +12,7 @@ class eventOccurCheckAndExecute
 private:
 	std::array<std::unique_ptr<eventOccurCheckClassInterface>,3> executeEventOccurCheckClassesInAFrame;
 	std::deque<std::string> executeEventExecuteClassesInAFrame;
-	std::unordered_map<std::string, eventExecuteClassInterface> eventExecuteClassSpecificStringMap;
+	std::unordered_map<std::string, std::unique_ptr<eventExecuteClassInterface>> eventExecuteClassSpecificStringMap;
 public:
 	eventOccurCheckAndExecute();
 	//この関数は以下の例外のいずれかを送出する可能性があります。

@@ -5,6 +5,7 @@ class dummyEventAction2 :
 {
 public:
 	dummyEventAction2();
+	void executeEventExecuteClass() override;
 	virtual ~dummyEventAction2();
 };
 

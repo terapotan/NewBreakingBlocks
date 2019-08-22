@@ -2,6 +2,7 @@
 #include "dummyEventCheck1.h"
 #include "dummyEventCheck2.h"
 #include "dummyEventCheck3.h"
+#include "dummyEventAction1.h"
 
 eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 {
@@ -12,12 +13,17 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 	this->executeEventOccurCheckClassesInAFrame.at(1).reset(new dummyEventCheck2);
 	this->executeEventOccurCheckClassesInAFrame.at(2).reset(new dummyEventCheck3);
 
+	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("sss"), std::unique_ptr<eventExecuteClassInterface>(new dummyEventAction1)));
+
+
+
 	printfDx("EventCheckList:");
 
 	//FIXME:å„Ç≈ä÷êîÇ…Ç‹Ç∆ÇﬂÇÈÇ±Ç∆
 	for (const auto &e : this->executeEventOccurCheckClassesInAFrame) {
 		printfDx("%s,", (e->toStringForDebug()).c_str());
 	}
+
 	printfDx("\n");
 
 }
@@ -32,7 +38,6 @@ void eventOccurCheckAndExecute::executeOccurCheckClasses()
 
 		if (tmpStr != EXECUTE_NOTHING) {
 			this->executeEventExecuteClassesInAFrame.push_back(tmpStr);
-
 		}
 	}
 	//FIXME:å„Ç≈ä÷êîÇ…Ç‹Ç∆ÇﬂÇÈÇ±Ç∆
@@ -44,7 +49,11 @@ void eventOccurCheckAndExecute::executeOccurCheckClasses()
 
 void eventOccurCheckAndExecute::executeEventExecuteClasses()
 {
-	//FIXME:âΩÇ©èëÇ≠Ç±Ç∆
+	printfDx("EventExecuseList:");
+	printfDx("%s", "dummyEventAction1,dummyEventAction2,dummyEventAction3,");
+	printfDx("\n");
+
+	printfDx("EventAfterQueueListEmpty:%s", "Yes");
 }
 
 eventOccurCheckAndExecute::~eventOccurCheckAndExecute()
