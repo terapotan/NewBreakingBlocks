@@ -1,8 +1,11 @@
 #pragma once
-class dummyEventCheck2
+#include "eventOccurCheckClassInterface.h"
+
+class dummyEventCheck2 : public eventOccurCheckClassInterface
 {
 public:
 	dummyEventCheck2();
+	std::string toStringForDebug() override;
 	virtual ~dummyEventCheck2();
 };
 

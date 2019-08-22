@@ -54,9 +54,6 @@
     <ClInclude Include="eventExecuteClassInterface.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="eventCheckClassInterface.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="dummyEventCheck1.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -102,9 +99,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="eventExecuteClassInterface.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="eventCheckClassInterface.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="dummyEventCheck1.cpp">
