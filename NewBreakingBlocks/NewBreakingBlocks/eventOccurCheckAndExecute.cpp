@@ -13,18 +13,38 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 	this->executeEventOccurCheckClassesInAFrame.at(2).reset(new dummyEventCheck3);
 
 	printfDx("EventCheckList:");
+
+	//FIXME:å„Ç≈ä÷êîÇ…Ç‹Ç∆ÇﬂÇÈÇ±Ç∆
 	for (const auto &e : this->executeEventOccurCheckClassesInAFrame) {
 		printfDx("%s,", (e->toStringForDebug()).c_str());
 	}
+	printfDx("\n");
 
 }
 
 
 void eventOccurCheckAndExecute::executeOccurCheckClasses()
 {
+	printfDx("EventQueueList:");
+
 	for (const auto &e : this->executeEventOccurCheckClassesInAFrame) {
-		e->executeEventOccurCheck();
+		std::string tmpStr = e->executeEventOccurCheck();
+
+		if (tmpStr != EXECUTE_NOTHING) {
+			this->executeEventExecuteClassesInAFrame.push_back(tmpStr);
+
+		}
 	}
+	//FIXME:å„Ç≈ä÷êîÇ…Ç‹Ç∆ÇﬂÇÈÇ±Ç∆
+	for (const auto &e : this->executeEventExecuteClassesInAFrame) {
+		printfDx("%s,", e.c_str());
+	}
+	printfDx("\n");
+}
+
+void eventOccurCheckAndExecute::executeEventExecuteClasses()
+{
+	//FIXME:âΩÇ©èëÇ≠Ç±Ç∆
 }
 
 eventOccurCheckAndExecute::~eventOccurCheckAndExecute()

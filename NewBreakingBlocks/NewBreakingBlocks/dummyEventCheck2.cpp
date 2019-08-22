@@ -12,7 +12,7 @@ std::string dummyEventCheck2::toStringForDebug()
 
 std::string dummyEventCheck2::executeEventOccurCheck()
 {
-	return std::string(EXECUTE_NOTHING);
+	return std::string("dummyEventAction2");
 }
 
 
