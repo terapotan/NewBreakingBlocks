@@ -10,8 +10,8 @@
 class eventOccurCheckAndExecute
 {
 private:
-	std::array<std::unique_ptr<eventOccurCheckClassInterface>,3> executeEventOccurCheckClassesInAFrame;
-	std::deque<std::string> executeEventExecuteClassesInAFrame;
+	std::array<std::unique_ptr<eventOccurCheckClassInterface>,3> eventOccurCheckClassesInAFrame;
+	std::deque<std::string> eventExecuteClassesInAFrame;
 	std::unordered_map<std::string, std::unique_ptr<eventExecuteClassInterface>> eventExecuteClassSpecificStringMap;
 public:
 	eventOccurCheckAndExecute();
