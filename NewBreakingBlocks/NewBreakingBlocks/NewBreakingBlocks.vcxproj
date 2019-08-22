@@ -158,6 +158,10 @@
     <ClInclude Include="ball.h" />
     <ClInclude Include="bar.h" />
     <ClInclude Include="block.h" />
+    <ClInclude Include="dummyEventCheck1.h" />
+    <ClInclude Include="dummyEventCheck2.h" />
+    <ClInclude Include="dummyEventCheck3.h" />
+    <ClInclude Include="eventCheckClassInterface.h" />
     <ClInclude Include="eventExecuteClassInterface.h" />
     <ClInclude Include="eventOccurCheckAndExecute.h" />
     <ClInclude Include="eventOccurCheckClassInterface.h" />
@@ -173,7 +177,11 @@
     <ClCompile Include="ball.cpp" />
     <ClCompile Include="bar.cpp" />
     <ClCompile Include="block.cpp" />
+    <ClCompile Include="dummyEventCheck2.cpp" />
+    <ClCompile Include="dummyEventCheck3.cpp" />
     <ClCompile Include="DxLibProjectTemp.cpp" />
+    <ClCompile Include="dummyEventCheck1.cpp" />
+    <ClCompile Include="eventCheckClassInterface.cpp" />
     <ClCompile Include="eventExecuteClassInterface.cpp" />
     <ClCompile Include="eventOccurCheckAndExecute.cpp" />
     <ClCompile Include="eventOccurCheckClassInterface.cpp" />
