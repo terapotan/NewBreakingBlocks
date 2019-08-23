@@ -1,5 +1,4 @@
 #include "bar.h"
-#include "imageLoadFailureExpection.h"
 #include "realAndVirtualCoordinateSettings.h"
 
 

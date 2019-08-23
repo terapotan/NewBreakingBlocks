@@ -1,5 +1,5 @@
 #include "playDisplayImageManagement.h"
-#include "imageLoadFailureExpection.h"
+#include "imageLoadFailureException.h"
 
 inline void ifNullNothingDeleteGraph(int graphicHandle) {
 	//もしグラフィックハンドルがNULL値なら何もしない
@@ -23,7 +23,7 @@ playDisplayImageManagement::playDisplayImageManagement()
 	bool isBarImageLoadFail= (barImageHandle == -1);
 	bool isBlockImageLoadFail = (blockImageHandle == -1);
 
-	imageLoadFailureExpection imageErrorInstance;
+	imageLoadFailureException imageErrorInstance;
 
 	if (isBallImageLoadFail) {
 		this->ballImageHandle = NULL_GRAPHICHANDLE;

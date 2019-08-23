@@ -14,9 +14,9 @@ class mainTest(unittest.TestCase):
     def test_checkCollectBallAndBarCollision(self):
         self.assertEqual(input('ボールとバーが重なっているときにcollisionCheck:1となっているか(y/n)'),'y')
     def test_checkCollectEventCheckListContent(self):
-        self.assertEqual(input('EventCheckList:dummyEventCheck1,dummyEventCheck2,dummyEventCheck3,と表示されているか(y/n)'),'y')
+        self.assertEqual(input('EventOccurCheckClassesInAFrame:dummyEventCheck1,dummyEventCheck2,dummyEventCheck3,と表示されているか(y/n)'),'y')
     def test_checkCollectEventQueueListContent(self):
-        self.assertEqual(input('EventQueueList:dummyEventAction1,dummyEventAction2,dummyEventAction3,と表示されているか(y/n)'),'y')
+        self.assertEqual(input('EventExecuteClassesInAFrame:dummyEventAction1,dummyEventAction2,dummyEventAction3,と表示されているか(y/n)'),'y')
     def test_checkCollectEventActionListCotent(self):
         self.assertEqual(input('EventExecuseList:dummyEventAction1,dummyEventAction2,dummyEventAction3,と表示されているか(y/n)'),'y')
     def test_checkCollectEventQueueListAfterCalling(self):
