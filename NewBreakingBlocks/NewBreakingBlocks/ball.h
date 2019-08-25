@@ -1,5 +1,8 @@
 #pragma once
-class ball
+#include "rectObject.h"
+#include "playDisplayImageManagement.h"
+
+class ball : public rectObject
 {
 private:
 	//物体の位置や速度指定に使う座標は実際の座標ではなく
@@ -7,8 +10,8 @@ private:
 	//virtualDrawScreenWidth,Heightの仮想座標である。
 	//メンバ変数に格納されている座標の値も仮想座標である。
 	//仮想座標は描画時に実座標に変換される。
+	//画像の大きさ等の数値も仮想座標である
 
-	//FIXME:仮想座標だとわかるように変数の名前を変更したほうがいい
 
 	int ballLeftupCoordX;//画面右方向を正とする
 	int ballLeftupCoordY;//画面下方向を正とする
@@ -17,15 +20,19 @@ private:
 	int ballDiamater_Pixel;
 	int ballImageHandle;
 public:
-	ball();
-	ball(int ballLeftupCoordX, int ballLeftupCoordY);
+	ball(const playDisplayImageManagement& playInstance);
+	ball(int ballLeftupCoordX, int ballLeftupCoordY, const playDisplayImageManagement& playInstance);
 	void setBallCoordinate(int x, int y);
 	int getBallCoordinateX();
 	int getBallCoordinateY();
-	void setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFrame);
 	int getBallDiamaterPixel();
+
+	void setBallVelocity(int ballVelocityX_PerFrame, int ballVelocityY_PerFrame);
 	void moveBallAtTheSetVelocity();
+
 	void ballPaint();
+
+	void saveNowObjectStateToRectObject() override;
 	virtual ~ball();
 };
 
