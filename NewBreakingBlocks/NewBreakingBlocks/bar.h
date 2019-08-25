@@ -1,6 +1,8 @@
 #pragma once
+#include "rectObject.h"
+#include "playDisplayImageManagement.h"
 
-class bar
+class bar : public rectObject
 {
 private:
 	//物体の位置や速度指定に使う座標は実際の座標ではなく
@@ -17,16 +19,22 @@ private:
 	int barHeight_Pixel;
 
 public:
-	bar();
-	bar(int barLeftupCoordX, int barLeftupCoordY);
+	bar(const playDisplayImageManagement& playInstance);
+	bar(int barLeftupCoordX, int barLeftupCoordY, const playDisplayImageManagement& playInstance);
+
 	void setBarCoordinate(int x, int y);
 	int getBarCoordinateX();
 	int getBarCoordinateY();
 	int getBarWidthPixel();
 	int getBarHeightPixel();
+
 	void setBarVelocity(int ballVelocityX_PerFrame);
 	void moveBarAtTheSetVelocity();
+
 	void barPaint();
+
+	void saveNowObjectStateToRectObject() override;
+
 	virtual ~bar();
 };
 

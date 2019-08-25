@@ -1,22 +1,19 @@
 #include "bar.h"
-#include "imageLoadFailureExpection.h"
 #include "realAndVirtualCoordinateSettings.h"
 
 
-bar::bar()
+bar::bar(const playDisplayImageManagement& playInstance)
 {
-	barImageHandle = LoadGraph("../.././resource/bar.png");
+	barImageHandle = playInstance.getBarImageHandle();
 
-	if (barImageHandle == -1) {
-		imageLoadFailureExpection imageLoadInstance;
-		throw imageLoadInstance;
-	}
-
-
-	GetGraphSize(barImageHandle, &(this->barWidth_Pixel), &(this->barHeight_Pixel));
+	int tmpWidth, tmpHeight;
+	
+	GetGraphSize(barImageHandle, &tmpWidth, &tmpHeight);
+	this->barWidth_Pixel = convertToVirtualCoordinate(tmpWidth);
+	this->barHeight_Pixel = convertToVirtualCoordinate(tmpHeight);
 }
 
-bar::bar(int barLeftupCoordX, int barLeftupCoordY) : bar()
+bar::bar(int barLeftupCoordX, int barLeftupCoordY, const playDisplayImageManagement& playInstance) : bar(playInstance)
 {
 	this->barLeftupCoordX = barLeftupCoordX;
 	this->barLeftupCoordY = barLeftupCoordY;
@@ -25,7 +22,6 @@ bar::bar(int barLeftupCoordX, int barLeftupCoordY) : bar()
 
 bar::~bar()
 {
-	DeleteGraph(barImageHandle);
 }
 
 
@@ -67,8 +63,16 @@ void bar::moveBarAtTheSetVelocity()
 }
 
 void bar::barPaint() {
-	DrawGraph(convertToRealCoordinateX(barLeftupCoordX),
-		convertToRealCoordinateY(barLeftupCoordY), barImageHandle,TRUE);
+	DrawGraph(convertToRealCoordinate(barLeftupCoordX),
+		convertToRealCoordinate(barLeftupCoordY), barImageHandle,TRUE);
+}
+
+void bar::saveNowObjectStateToRectObject()
+{
+	this->rectObjectElements.rectLeftUpCoordX = this->barLeftupCoordX;
+	this->rectObjectElements.rectLeftUpCoordY = this->barLeftupCoordY;
+	this->rectObjectElements.rectWidth = this->barWidth_Pixel;
+	this->rectObjectElements.rectHeight = this->barHeight_Pixel;
 }
 
 
