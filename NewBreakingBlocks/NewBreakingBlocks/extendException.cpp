@@ -11,7 +11,7 @@ std::string extendException::getDetailThisException()
 }
 
 
-void extendException::setThrowExceptionPlace(std::string fullPathFileName,std::string fileLine)
+void extendException::setThrowExceptionPlace(std::string fullPathFileName,int fileLine)
 {
 	constexpr const char* pathSeparator = "\\";
 	this->throwExceptionLineNumber = fileLine;

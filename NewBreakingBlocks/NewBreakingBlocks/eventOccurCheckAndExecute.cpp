@@ -11,6 +11,7 @@
 
 void eventOccurCheckAndExecute::showEventOccurCheckClassesInAFrameForDebug()
 {
+
 	printfDx("EventOccurCheckClassesInAFrame:");
 
 	for (const auto &e : this->eventOccurCheckClassesInAFrame) {
