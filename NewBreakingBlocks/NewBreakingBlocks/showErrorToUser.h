@@ -28,9 +28,9 @@ private:
 public:
 	showErrorToUser();
 	void showNormalExceptionErrorDialog(const extendException& exceptionInstance, std::string messageShowForUser);
-	void showExtendExceptionErrorDialog();
-	void showStdExceptionErrorDialog();
-	void showSystemExceptionErrorDialog();
+	void showExtendExceptionErrorDialog(const extendException& exceptionInstance, std::string messageShowForUser);
+	void showStdExceptionErrorDialog(const std::exception& exceptionInstance,std::string messageShowForUser);
+	void showSystemExceptionErrorDialog(std::string messageShowForUser);
 	virtual ~showErrorToUser();
 };
 

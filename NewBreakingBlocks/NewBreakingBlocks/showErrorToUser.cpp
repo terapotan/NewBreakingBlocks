@@ -31,17 +31,80 @@ void showErrorToUser::showNormalExceptionErrorDialog(const extendException& exce
 	this->showErrorDialog(errorInformation);
 }
 
-void showErrorToUser::showExtendExceptionErrorDialog()
+void showErrorToUser::showExtendExceptionErrorDialog(const extendException& exceptionInstance, std::string messageShowForUser)
 {
+	showOnErrorDialogInfomation errorInformation;
+	softwareInfomation softInfo;
+
+
+	//ユーザ向けエラーメッセージ
+	errorInformation.messageShowForUser = messageShowForUser;
+	errorInformation.developerTwitterAddress = softInfo.getDeveloperTwitterAddress();
+	errorInformation.developerMailAddress = softInfo.getDeveloperMailAddress();
+
+	//開発者向けエラーメッセージ
+	errorInformation.exceptionTypeName = exceptionInstance.getExceptionTypeName();
+	errorInformation.exceptionDetail = exceptionInstance.getDetailThisException();
+	errorInformation.exceptionOccurPlaceFile = exceptionInstance.getThrowExceptionFileName();
+	errorInformation.exceptionOccurPlaceLine = exceptionInstance.getThrowExceptionLineNumber();
+	errorInformation.nowRunSoftwareName = softInfo.getNowRunSoftwareName();
+	errorInformation.nowRunsoftwareVersion = softInfo.getNowRunSoftwareVersion();
+	errorInformation.useOS = softInfo.getWindowsOSVersion();
+	errorInformation.dxLibraryVersion = softInfo.getDxLibraryVersion();
+
+
+	this->showErrorDialog(errorInformation);
 }
 
-void showErrorToUser::showStdExceptionErrorDialog()
+void showErrorToUser::showStdExceptionErrorDialog(const std::exception& exceptionInstance,std::string messageShowForUser)
 {
+	showOnErrorDialogInfomation errorInformation;
+	softwareInfomation softInfo;
+
+
+	//ユーザ向けエラーメッセージ
+	errorInformation.messageShowForUser = messageShowForUser;
+	errorInformation.developerTwitterAddress = softInfo.getDeveloperTwitterAddress();
+	errorInformation.developerMailAddress = softInfo.getDeveloperMailAddress();
+
+	//開発者向けエラーメッセージ
+	errorInformation.exceptionTypeName = exceptionInstance.what();
+	errorInformation.exceptionDetail = "Unknown";
+	errorInformation.exceptionOccurPlaceFile = "Unknown";
+	errorInformation.exceptionOccurPlaceLine = -1;
+	errorInformation.nowRunSoftwareName = softInfo.getNowRunSoftwareName();
+	errorInformation.nowRunsoftwareVersion = softInfo.getNowRunSoftwareVersion();
+	errorInformation.useOS = softInfo.getWindowsOSVersion();
+	errorInformation.dxLibraryVersion = softInfo.getDxLibraryVersion();
+
+
+	this->showErrorDialog(errorInformation);
 }
 
 
-void showErrorToUser::showSystemExceptionErrorDialog()
+void showErrorToUser::showSystemExceptionErrorDialog(std::string messageShowForUser)
 {
+	showOnErrorDialogInfomation errorInformation;
+	softwareInfomation softInfo;
+
+
+	//ユーザ向けエラーメッセージ
+	errorInformation.messageShowForUser = messageShowForUser;
+	errorInformation.developerTwitterAddress = softInfo.getDeveloperTwitterAddress();
+	errorInformation.developerMailAddress = softInfo.getDeveloperMailAddress();
+
+	//開発者向けエラーメッセージ
+	errorInformation.exceptionTypeName = "構造化例外";
+	errorInformation.exceptionDetail = "Unknown";
+	errorInformation.exceptionOccurPlaceFile = "Unknown";
+	errorInformation.exceptionOccurPlaceLine = -1;
+	errorInformation.nowRunSoftwareName = softInfo.getNowRunSoftwareName();
+	errorInformation.nowRunsoftwareVersion = softInfo.getNowRunSoftwareVersion();
+	errorInformation.useOS = softInfo.getWindowsOSVersion();
+	errorInformation.dxLibraryVersion = softInfo.getDxLibraryVersion();
+
+
+	this->showErrorDialog(errorInformation);
 }
 
 void showErrorToUser::showErrorDialog(const showOnErrorDialogInfomation & errorInfomation)
@@ -87,6 +150,8 @@ void showErrorToUser::showErrorDialog(const showOnErrorDialogInfomation & errorI
 		TEXT("致命的なエラー"),
 		MB_OK | MB_ICONERROR);
 }
+
+
 
 showErrorToUser::~showErrorToUser()
 {
