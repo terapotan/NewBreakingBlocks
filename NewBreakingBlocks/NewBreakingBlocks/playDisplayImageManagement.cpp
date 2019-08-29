@@ -13,6 +13,7 @@ inline void ifNullNothingDeleteGraph(int graphicHandle) {
 playDisplayImageManagement::playDisplayImageManagement()
 {
 
+
 	//FIXME:エラー処理が冗長であるため、
 	//もっとシンプルに書けるようにしたい。
 	this->ballImageHandle = LoadGraph("../.././resource/ball.png");
