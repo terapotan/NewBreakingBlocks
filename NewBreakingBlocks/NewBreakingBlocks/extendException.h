@@ -9,7 +9,7 @@ private:
 
 public:
 	extendException();
-	virtual std::string getDetailThisException();
+	virtual std::string getDetailThisException() = 0;
 	//__FILE__,__LINE__で取得したファイル名や行数を
 	//ファイル名はファイル名だけ、行数は数値の型に変換して例外クラスのメンバ変数に格納する。
 	//fullPathFileNameには、フルパスのファイル名が格納される。
