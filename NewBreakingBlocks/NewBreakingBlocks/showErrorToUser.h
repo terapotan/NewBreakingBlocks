@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "extendException.h"
 
 typedef struct showOnErrorDialogInfomation
 {
@@ -14,7 +15,6 @@ typedef struct showOnErrorDialogInfomation
 	std::string nowRunsoftwareVersion;
 	std::string useOS;
 	std::string dxLibraryVersion;
-	std::string messageShowForDeveloper;
 }showOnErrorDialogInfomation;
 
 //Normal:extendExceptionを継承し、さらに個別のクラスごとに例外を補足している場合
@@ -27,7 +27,7 @@ private:
 	void showErrorDialog(const showOnErrorDialogInfomation& errorInfomation);
 public:
 	showErrorToUser();
-	void showNormalExceptionErrorDialog();
+	void showNormalExceptionErrorDialog(const extendException& exceptionInstance, std::string messageShowForUser);
 	void showExtendExceptionErrorDialog();
 	void showStdExceptionErrorDialog();
 	void showSystemExceptionErrorDialog();

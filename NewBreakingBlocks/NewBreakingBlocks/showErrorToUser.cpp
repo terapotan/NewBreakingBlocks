@@ -6,33 +6,27 @@ showErrorToUser::showErrorToUser()
 {
 }
 
-void showErrorToUser::showNormalExceptionErrorDialog()
+void showErrorToUser::showNormalExceptionErrorDialog(const extendException& exceptionInstance, std::string messageShowForUser)
 {
 	showOnErrorDialogInfomation errorInformation;
 	softwareInfomation softInfo;
 
 
 	//ユーザ向けエラーメッセージ
-	errorInformation.messageShowForUser			= "画像の読み込みに失敗しました。\n"
-								   				"以下の項目を確認してください。\n"
-								   				"* resourceフォルダの位置を変更していないか\n"
-								   				"* resourceフォルダの中に画像ファイルが全て存在するか";
+	errorInformation.messageShowForUser			= messageShowForUser;
 	errorInformation.developerTwitterAddress	= softInfo.getDeveloperTwitterAddress();
 	errorInformation.developerMailAddress		= softInfo.getDeveloperMailAddress();
 
 	//開発者向けエラーメッセージ
-	errorInformation.exceptionTypeName			= "imageLoadFailureException";
-	errorInformation.exceptionDetail			= "ball.pngの読み込みに失敗しました。";
-	errorInformation.exceptionOccurPlaceFile	= "playDisplayImageManagement.cpp";
-	errorInformation.exceptionOccurPlaceLine	= 10;
+	errorInformation.exceptionTypeName			= exceptionInstance.getExceptionTypeName();
+	errorInformation.exceptionDetail			= exceptionInstance.getDetailThisException();
+	errorInformation.exceptionOccurPlaceFile	= exceptionInstance.getThrowExceptionFileName();
+	errorInformation.exceptionOccurPlaceLine	= exceptionInstance.getThrowExceptionLineNumber();
 	errorInformation.nowRunSoftwareName			= softInfo.getNowRunSoftwareName();
 	errorInformation.nowRunsoftwareVersion		= softInfo.getNowRunSoftwareVersion();
 	errorInformation.useOS						= softInfo.getWindowsOSVersion();
 	errorInformation.dxLibraryVersion			= softInfo.getDxLibraryVersion();
-	errorInformation.messageShowForDeveloper	= "* exeファイルの2階層上の1階層下にresourceフォルダが存在すること\n"
-												  "* パスの区切り字が間違っていないこと\n"
-												  "* 読み込み失敗したファイルが存在すること、破損していないこと"
-												  "を確認してください。";
+
 											
 	this->showErrorDialog(errorInformation);
 }
@@ -86,9 +80,6 @@ void showErrorToUser::showErrorDialog(const showOnErrorDialogInfomation & errorI
 	errorMessageOnErrorDialog += "\n";
 	errorMessageOnErrorDialog += ("DXライブラリバージョン:" + errorInfomation.dxLibraryVersion);
 	errorMessageOnErrorDialog += "\n";
-	errorMessageOnErrorDialog += "===開発者向けの対処方法===";
-	errorMessageOnErrorDialog += "\n";
-	errorMessageOnErrorDialog += errorInfomation.messageShowForDeveloper;
 
 
 	MessageBox(NULL,
