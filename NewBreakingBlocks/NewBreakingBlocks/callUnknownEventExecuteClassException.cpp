@@ -1,8 +1,19 @@
 #include "callUnknownEventExecuteClassException.h"
 
 
-callUnknownEventExecuteClassException::callUnknownEventExecuteClassException()
+callUnknownEventExecuteClassException::callUnknownEventExecuteClassException(std::string unknownClass)
 {
+	this->unknownEventExecuteClass = unknownClass;
+}
+
+std::string callUnknownEventExecuteClassException::getDetailThisException() const
+{
+	return std::string("•s–¾‚È" + this->unknownEventExecuteClass + "‚ªŒÄ‚Ño‚³‚ê‚Ü‚µ‚½B");
+}
+
+std::string callUnknownEventExecuteClassException::getExceptionTypeName() const
+{
+	return std::string("callUnknownEventExecuteClassException");
 }
 
 

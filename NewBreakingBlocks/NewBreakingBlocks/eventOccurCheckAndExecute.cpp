@@ -1,5 +1,6 @@
 #include "eventOccurCheckAndExecute.h"
 #include "callUnknownEventExecuteClassException.h"
+#include "setFailureEventOccurCheckClass.h"
 #include "dummyEventCheck1.h"
 #include "dummyEventCheck2.h"
 #include "dummyEventCheck3.h"
@@ -37,9 +38,17 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 
 	//FIXME:追加の方法が冗長なような、、、
 	//もっとシンプルにできる方法を考えないとだめかもしれない。
-	this->eventOccurCheckClassesInAFrame.at(0).reset(new dummyEventCheck1);
-	this->eventOccurCheckClassesInAFrame.at(1).reset(new dummyEventCheck2);
-	this->eventOccurCheckClassesInAFrame.at(2).reset(new dummyEventCheck3);
+
+	try {
+		this->eventOccurCheckClassesInAFrame.at(0).reset(new dummyEventCheck1);
+		this->eventOccurCheckClassesInAFrame.at(1).reset(new dummyEventCheck2);
+		this->eventOccurCheckClassesInAFrame.at(20).reset(new dummyEventCheck3);
+	}
+	catch (const std::out_of_range& tmpException) {
+		setFailureEventOccurCheckClass exceptionUserInstance;
+		exceptionUserInstance.setThrowExceptionPlace(__FILE__, __LINE__);
+		throw exceptionUserInstance;
+	}
 
 	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("dummyEventAction1"), std::unique_ptr<eventExecuteClassInterface>(new dummyEventAction1)));
 	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("dummyEventAction2"), std::unique_ptr<eventExecuteClassInterface>(new dummyEventAction2)));
@@ -74,12 +83,14 @@ void eventOccurCheckAndExecute::executeEventExecuteClasses()
 
 		//mがint型でdecltype(m)::interatorとすると、int::iteratorと同じ意味になる
 		//decltype(m)でmの型名を取得することが出来る。
-		decltype(this->eventExecuteClassSpecificStringMap)::iterator it = this->eventExecuteClassSpecificStringMap.find(this->eventExecuteClassesInAFrame.front());
+		std::string keyCallEventExecuteClass = this->eventExecuteClassesInAFrame.front();
+		decltype(this->eventExecuteClassSpecificStringMap)::iterator it = this->eventExecuteClassSpecificStringMap.find(keyCallEventExecuteClass);
 
 		//イベントチェッククラスが返してきた文字列に対応するイベントアクションクラスが存在しない場合
 		//callUnknownEventExecuteClassException例外を投げる。
 		if (it == this->eventExecuteClassSpecificStringMap.end()) {
-			callUnknownEventExecuteClassException expectionInstance;
+			callUnknownEventExecuteClassException expectionInstance(keyCallEventExecuteClass);
+			expectionInstance.setThrowExceptionPlace(__FILE__, __LINE__);
 			throw expectionInstance;
 		}
 
