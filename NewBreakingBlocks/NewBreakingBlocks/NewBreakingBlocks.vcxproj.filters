@@ -87,6 +87,9 @@
     <ClInclude Include="setFailureEventOccurCheckClass.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="managementSceneObjects.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -156,6 +159,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="setFailureEventOccurCheckClass.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="managementSceneObjects.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

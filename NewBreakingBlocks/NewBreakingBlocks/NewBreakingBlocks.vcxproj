@@ -171,6 +171,7 @@
     <ClInclude Include="eventOccurCheckAndExecute.h" />
     <ClInclude Include="eventOccurCheckClassInterface.h" />
     <ClInclude Include="extendException.h" />
+    <ClInclude Include="managementSceneObjects.h" />
     <ClInclude Include="playDisplayImageManagement.h" />
     <ClInclude Include="realAndVirtualCoordinateSettings.h" />
     <ClInclude Include="hitJudgementBetweenObjects.h" />
@@ -200,6 +201,7 @@
     <ClCompile Include="extendException.cpp" />
     <ClCompile Include="hitJudgementBetweenObjects.cpp" />
     <ClCompile Include="imageLoadFailureException.cpp" />
+    <ClCompile Include="managementSceneObjects.cpp" />
     <ClCompile Include="playDisplayImageManagement.cpp" />
     <ClCompile Include="rectObject.cpp" />
     <ClCompile Include="setFailureEventOccurCheckClass.cpp" />
