@@ -7,7 +7,7 @@ dummyEventAction1::dummyEventAction1()
 
 void dummyEventAction1::executeEventExecuteClass()
 {
-	printfDx("dummyEventAction1,");
+	//printfDx("dummyEventAction1,");
 }
 
 

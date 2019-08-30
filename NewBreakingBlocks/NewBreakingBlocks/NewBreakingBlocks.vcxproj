@@ -176,6 +176,7 @@
     <ClInclude Include="hitJudgementBetweenObjects.h" />
     <ClInclude Include="imageLoadFailureException.h" />
     <ClInclude Include="rectObject.h" />
+    <ClInclude Include="setFailureEventOccurCheckClass.h" />
     <ClInclude Include="showErrorToUser.h" />
     <ClInclude Include="softwareInfomation.h" />
     <ClInclude Include="stdafx.h" />
@@ -201,6 +202,7 @@
     <ClCompile Include="imageLoadFailureException.cpp" />
     <ClCompile Include="playDisplayImageManagement.cpp" />
     <ClCompile Include="rectObject.cpp" />
+    <ClCompile Include="setFailureEventOccurCheckClass.cpp" />
     <ClCompile Include="showErrorToUser.cpp" />
     <ClCompile Include="softwareInfomation.cpp" />
     <ClCompile Include="stdafx.cpp">
