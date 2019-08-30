@@ -1,13 +1,14 @@
 #include "managementSceneObjects.h"
 
+
 managementSceneObjects::managementSceneObjects()
 {
-	playDisplayImageManagement playInstance;
-	ball ballInstance(0, 0, playInstance);
-	bar barInstance(30000, 0, playInstance);
-	eventOccurCheckAndExecute eventInstance;
+	this->playDisplayImageManagementInstance.reset(new playDisplayImageManagement());
 
-	//hitJudgementBetweenObjects hitJudgementInstance;
+	this->ballInstance.reset(new ball(0, 0, this->playDisplayImageManagementInstance));
+	this->barInstance.reset(new bar(30000, 0, this->playDisplayImageManagementInstance));
+	this->eventOccurCheckAndExecuteInstance.reset(new eventOccurCheckAndExecute());
+	this->hitJudgementBetweenObjectsInstance.reset(new hitJudgementBetweenObjects());
 
 }
 
