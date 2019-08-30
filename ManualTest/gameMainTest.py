@@ -9,8 +9,8 @@ class mainTest(unittest.TestCase):
         self.assertEqual(input('バーが左矢印を押したら左にいくか(y/n)'),'y')
     def test_inputKeyAndMoveRightBar(self):
         self.assertEqual(input('バーが右矢印を押したら右に行くか(y/n)'),'y')
-    def test_showBlockOnTheDisplay(self):
-        self.assertEqual(input('ブロックが表示されたか(y/n)'),'y')
+#    def test_showBlockOnTheDisplay(self):
+#        self.assertEqual(input('ブロックが表示されたか(y/n)'),'y')
 
 
 # ほかのファイルからimportされたときにテストが実行されないようにする

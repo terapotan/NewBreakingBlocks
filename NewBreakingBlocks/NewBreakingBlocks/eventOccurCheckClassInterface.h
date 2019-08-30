@@ -6,6 +6,7 @@ class eventOccurCheckClassInterface
 {
 public:
 	eventOccurCheckClassInterface();
+	//自身のクラス名をこの関数の戻り値とすること
 	virtual std::string toStringForDebug() = 0;
 
 	//イベントチェックを行う
@@ -16,4 +17,3 @@ public:
 	virtual std::string executeEventOccurCheck() = 0;
 	virtual ~eventOccurCheckClassInterface();
 };
-
