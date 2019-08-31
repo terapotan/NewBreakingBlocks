@@ -32,7 +32,6 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 
 	//FIXME:追加の方法が冗長なような、、、
 	//もっとシンプルにできる方法を考えないとだめかもしれない。
-
 	try {
 		/*
 		this->eventOccurCheckClassesInAFrame.at(0).reset(new dummyEventCheck1);

@@ -22,5 +22,10 @@ public:
 	void executeOccurCheckClasses();
 	void executeEventExecuteClasses();
 	virtual ~eventOccurCheckAndExecute();
+
+	eventOccurCheckAndExecute(const eventOccurCheckAndExecute&) = delete;
+	eventOccurCheckAndExecute& operator=(const eventOccurCheckAndExecute&) = delete;
+	eventOccurCheckAndExecute(eventOccurCheckAndExecute&&) = delete;
+	eventOccurCheckAndExecute& operator=(eventOccurCheckAndExecute&&) = delete;
 };
 
