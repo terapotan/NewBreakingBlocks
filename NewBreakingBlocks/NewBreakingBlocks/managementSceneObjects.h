@@ -19,6 +19,7 @@ public:
 	std::shared_ptr<bar> barInstance;
 	std::shared_ptr<ball> ballInstance;
 	std::shared_ptr<userInputManagement> userInputManagementInstance;
+	std::shared_ptr<hitJudgementBetweenObjects> hitJudgementBetweenObjectsInstance;
 
 	managementSceneObjects(const managementSceneObjects&) = delete;
 	managementSceneObjects& operator=(const managementSceneObjects&) = delete;
