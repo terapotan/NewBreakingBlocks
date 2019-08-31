@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include "eventExecuteClassInterface.h"
 #include "eventOccurCheckClassInterface.h"
-
+#include "managementSceneObjects.h"
 
 class eventOccurCheckAndExecute
 {
@@ -17,9 +17,9 @@ private:
 	void showEventExecuteClassesInAFrameForDebug();
 public:
 	eventOccurCheckAndExecute();
-
-	void executeOccurCheckClasses();
-	void executeEventExecuteClasses();
+	
+	void executeOccurCheckClasses(managementSceneObjects& sceneObjects);
+	void executeEventExecuteClasses(managementSceneObjects& sceneObjects);
 	virtual ~eventOccurCheckAndExecute();
 
 	eventOccurCheckAndExecute(const eventOccurCheckAndExecute&) = delete;

@@ -5,7 +5,7 @@ setVelocityBarRight::setVelocityBarRight()
 {
 }
 
-void setVelocityBarRight::executeEventExecuteClass()
+void setVelocityBarRight::executeEventExecuteClass(managementSceneObjects& sceneObjects)
 {
 
 }

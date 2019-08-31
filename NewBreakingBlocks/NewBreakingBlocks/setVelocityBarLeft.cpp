@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "setVelocityBarLeft.h"
 
 
@@ -6,7 +5,7 @@ setVelocityBarLeft::setVelocityBarLeft()
 {
 }
 
-void setVelocityBarLeft::executeEventExecuteClass()
+void setVelocityBarLeft::executeEventExecuteClass(managementSceneObjects& sceneObjects)
 {
 }
 

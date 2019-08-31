@@ -5,7 +5,7 @@ setVelocityBarNoMove::setVelocityBarNoMove()
 {
 }
 
-void setVelocityBarNoMove::executeEventExecuteClass()
+void setVelocityBarNoMove::executeEventExecuteClass(managementSceneObjects& sceneObjects)
 {
 }
 

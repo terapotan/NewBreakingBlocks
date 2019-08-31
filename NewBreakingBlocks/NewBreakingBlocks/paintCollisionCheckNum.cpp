@@ -5,7 +5,7 @@ paintCollisionCheckNum::paintCollisionCheckNum()
 {
 }
 
-void paintCollisionCheckNum::executeEventExecuteClass()
+void paintCollisionCheckNum::executeEventExecuteClass(managementSceneObjects& sceneObjects)
 {
 }
 

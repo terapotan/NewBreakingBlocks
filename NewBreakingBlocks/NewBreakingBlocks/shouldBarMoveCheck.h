@@ -1,12 +1,12 @@
 #pragma once
 #include "eventOccurCheckClassInterface.h"
-class isHitBallAndBar :
+class shouldBarMoveCheck :
 	public eventOccurCheckClassInterface
 {
 public:
-	isHitBallAndBar();
-	virtual ~isHitBallAndBar();
+	shouldBarMoveCheck();
 	std::string toStringForDebug() override;
 	std::string executeEventOccurCheck(managementSceneObjects& sceneObjects) override;
+	virtual ~shouldBarMoveCheck();
 };
 

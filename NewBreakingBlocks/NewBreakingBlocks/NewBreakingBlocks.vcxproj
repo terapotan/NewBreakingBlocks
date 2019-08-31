@@ -177,7 +177,7 @@
     <ClInclude Include="setVelocityBarLeft.h" />
     <ClInclude Include="setVelocityBarNoMove.h" />
     <ClInclude Include="setVelocityBarRight.h" />
-    <ClInclude Include="shouldBallMoveCheck.h" />
+    <ClInclude Include="shouldBarMoveCheck.h" />
     <ClInclude Include="showErrorToUser.h" />
     <ClInclude Include="softwareInfomation.h" />
     <ClInclude Include="stdafx.h" />
@@ -205,7 +205,7 @@
     <ClCompile Include="setVelocityBarLeft.cpp" />
     <ClCompile Include="setVelocityBarNoMove.cpp" />
     <ClCompile Include="setVelocityBarRight.cpp" />
-    <ClCompile Include="shouldBallMoveCheck.cpp" />
+    <ClCompile Include="shouldBarMoveCheck.cpp" />
     <ClCompile Include="showErrorToUser.cpp" />
     <ClCompile Include="softwareInfomation.cpp" />
     <ClCompile Include="stdafx.cpp">

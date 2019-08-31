@@ -2,7 +2,7 @@
 #include "callUnknownEventExecuteClassException.h"
 #include "setFailureEventOccurCheckClass.h"
 
-#include "shouldBallMoveCheck.h"
+#include "shouldBarMoveCheck.h"
 #include "isHitBallAndBar.h"
 
 #include "setVelocityBarLeft.h"
@@ -43,7 +43,7 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 	//もっとシンプルにできる方法を考えないとだめかもしれない。
 	try {
 		
-		this->eventOccurCheckClassesInAFrame.at(0).reset(new shouldBallMoveCheck());
+		this->eventOccurCheckClassesInAFrame.at(0).reset(new shouldBarMoveCheck());
 		this->eventOccurCheckClassesInAFrame.at(1).reset(new isHitBallAndBar());
 		
 	}
@@ -65,7 +65,7 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 }
 
 
-void eventOccurCheckAndExecute::executeOccurCheckClasses()
+void eventOccurCheckAndExecute::executeOccurCheckClasses(managementSceneObjects& sceneObjects)
 {
 	//1件もeventOccurCheckClassが登録されていない時は何もしない
 	if (this->eventOccurCheckClassesInAFrame.at(0) == nullptr) {
@@ -74,7 +74,7 @@ void eventOccurCheckAndExecute::executeOccurCheckClasses()
 
 
 	for (const auto &e : this->eventOccurCheckClassesInAFrame) {
-		std::string tmpStr = e->executeEventOccurCheck();
+		std::string tmpStr = e->executeEventOccurCheck(sceneObjects);
 
 		if (tmpStr != EXECUTE_NOTHING) {
 			this->eventExecuteClassesInAFrame.push_back(tmpStr);
@@ -84,7 +84,7 @@ void eventOccurCheckAndExecute::executeOccurCheckClasses()
 	//this->showEventExecuteClassesInAFrameForDebug();
 }
 
-void eventOccurCheckAndExecute::executeEventExecuteClasses()
+void eventOccurCheckAndExecute::executeEventExecuteClasses(managementSceneObjects& sceneObjects)
 {
 	//printfDx("EventExecuseList:");
 
@@ -103,7 +103,7 @@ void eventOccurCheckAndExecute::executeEventExecuteClasses()
 			throw expectionInstance;
 		}
 
-		(it->second)->executeEventExecuteClass();
+		(it->second)->executeEventExecuteClass(sceneObjects);
 		this->eventExecuteClassesInAFrame.pop_front();
 	}
 	//printfDx("\n");

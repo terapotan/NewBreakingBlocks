@@ -2,7 +2,6 @@
 #include "ball.h"
 #include "bar.h"
 #include "hitJudgementBetweenObjects.h"
-#include "eventOccurCheckAndExecute.h"
 #include "userInputManagement.h"
 
 //À‘Ì‚ğì¬‚·‚éê‡‚ÍAmanagementSceneObjects::getInstance()‚ğ—p‚¢‚é‚±‚ÆB

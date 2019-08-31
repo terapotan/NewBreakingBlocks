@@ -75,9 +75,6 @@
     <ClInclude Include="userInputManagement.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="shouldBallMoveCheck.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="isHitBallAndBar.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -91,6 +88,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="paintCollisionCheckNum.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="shouldBarMoveCheck.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -152,9 +152,6 @@
     <ClCompile Include="userInputManagement.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="shouldBallMoveCheck.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="isHitBallAndBar.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -168,6 +165,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="paintCollisionCheckNum.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="shouldBarMoveCheck.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
