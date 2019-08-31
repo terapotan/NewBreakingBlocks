@@ -17,6 +17,7 @@ public:
 	void setPreviousKeyStateAll();
 	void setNowKeyStateAll();
 	int isPreviousFrameNoPushAndNowFramePush(int checkHitKey);
+	//int isPreviousFramePushAndNowFrameNoPush(int checkHitKey);
 	int checkHitKeyAll();
 	userInputManagement();
 

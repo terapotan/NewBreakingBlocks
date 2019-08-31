@@ -33,9 +33,22 @@ int userInputManagement::isPreviousFrameNoPushAndNowFramePush(int checkHitKey)
 		return 1;
 	}
 	else {
-		return false;
+		return 0;
 	}
 }
+
+/*
+int userInputManagement::isPreviousFramePushAndNowFrameNoPush(int checkHitKey)
+{
+	if (this->previousKeyStateAll_DANGERPOINTER[checkHitKey] == 1 && this->nowKeyStateAll_DANGERPOINTER[checkHitKey] == 0) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+*/
+
 
 int userInputManagement::checkHitKeyAll()
 {
