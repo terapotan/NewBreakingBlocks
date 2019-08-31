@@ -6,5 +6,7 @@ class isHitBallAndBar :
 public:
 	isHitBallAndBar();
 	virtual ~isHitBallAndBar();
+	std::string toStringForDebug() override;
+	std::string executeEventOccurCheck() override;
 };
 

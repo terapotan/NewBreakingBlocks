@@ -1,6 +1,8 @@
 #include "eventOccurCheckAndExecute.h"
 #include "callUnknownEventExecuteClassException.h"
 #include "setFailureEventOccurCheckClass.h"
+#include "shouldBallMoveCheck.h"
+#include "isHitBallAndBar.h"
 
 //FIXME:ヘッダーファイルの取り扱いについて、スコープが最小限になるように修正
 
@@ -33,11 +35,10 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 	//FIXME:追加の方法が冗長なような、、、
 	//もっとシンプルにできる方法を考えないとだめかもしれない。
 	try {
-		/*
-		this->eventOccurCheckClassesInAFrame.at(0).reset(new dummyEventCheck1);
-		this->eventOccurCheckClassesInAFrame.at(1).reset(new dummyEventCheck2);
-		this->eventOccurCheckClassesInAFrame.at(2).reset(new dummyEventCheck3);
-		*/
+		
+		this->eventOccurCheckClassesInAFrame.at(0).reset(new shouldBallMoveCheck());
+		this->eventOccurCheckClassesInAFrame.at(1).reset(new isHitBallAndBar());
+		
 	}
 	catch (const std::out_of_range& tmpException) {
 		setFailureEventOccurCheckClass exceptionUserInstance;

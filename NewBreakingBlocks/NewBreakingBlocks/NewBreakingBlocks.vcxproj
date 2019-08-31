@@ -164,9 +164,6 @@
     <ClInclude Include="dummyEventAction1.h" />
     <ClInclude Include="dummyEventAction2.h" />
     <ClInclude Include="dummyEventAction3.h" />
-    <ClInclude Include="dummyEventCheck1.h" />
-    <ClInclude Include="dummyEventCheck2.h" />
-    <ClInclude Include="dummyEventCheck3.h" />
     <ClInclude Include="eventExecuteClassInterface.h" />
     <ClInclude Include="eventOccurCheckAndExecute.h" />
     <ClInclude Include="eventOccurCheckClassInterface.h" />
@@ -198,10 +195,7 @@
     <ClCompile Include="dummyEventAction1.cpp" />
     <ClCompile Include="dummyEventAction2.cpp" />
     <ClCompile Include="dummyEventAction3.cpp" />
-    <ClCompile Include="dummyEventCheck2.cpp" />
-    <ClCompile Include="dummyEventCheck3.cpp" />
     <ClCompile Include="DxLibProjectTemp.cpp" />
-    <ClCompile Include="dummyEventCheck1.cpp" />
     <ClCompile Include="eventExecuteClassInterface.cpp" />
     <ClCompile Include="eventOccurCheckAndExecute.cpp" />
     <ClCompile Include="eventOccurCheckClassInterface.cpp" />

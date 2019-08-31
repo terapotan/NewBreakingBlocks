@@ -5,6 +5,8 @@ class shouldBallMoveCheck :
 {
 public:
 	shouldBallMoveCheck();
+	std::string toStringForDebug() override;
+	std::string executeEventOccurCheck() override;
 	virtual ~shouldBallMoveCheck();
 };
 
