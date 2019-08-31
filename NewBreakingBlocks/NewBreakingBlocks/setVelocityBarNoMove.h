@@ -5,6 +5,7 @@ class setVelocityBarNoMove :
 {
 public:
 	setVelocityBarNoMove();
+	void executeEventExecuteClass();
 	virtual ~setVelocityBarNoMove();
 };
 

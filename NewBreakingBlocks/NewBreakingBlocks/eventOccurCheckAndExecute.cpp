@@ -1,8 +1,15 @@
 #include "eventOccurCheckAndExecute.h"
 #include "callUnknownEventExecuteClassException.h"
 #include "setFailureEventOccurCheckClass.h"
+
 #include "shouldBallMoveCheck.h"
 #include "isHitBallAndBar.h"
+
+#include "setVelocityBarLeft.h"
+#include "setVelocityBarRight.h"
+#include "setVelocityBarNoMove.h"
+#include "paintCollisionCheckNum.h"
+
 
 //FIXME:ヘッダーファイルの取り扱いについて、スコープが最小限になるように修正
 
@@ -45,11 +52,12 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 		exceptionUserInstance.setThrowExceptionPlace(__FILE__, __LINE__);
 		throw exceptionUserInstance;
 	}
-	/*
-	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("dummyEventAction1"), std::unique_ptr<eventExecuteClassInterface>(new dummyEventAction1)));
-	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("dummyEventAction2"), std::unique_ptr<eventExecuteClassInterface>(new dummyEventAction2)));
-	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("dummyEventAction3"), std::unique_ptr<eventExecuteClassInterface>(new dummyEventAction3)));
-	*/
+	
+	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarLeft"), std::unique_ptr<setVelocityBarLeft>(new setVelocityBarLeft())));
+	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarRight"), std::unique_ptr<setVelocityBarRight>(new setVelocityBarRight())));
+	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarNoMove"), std::unique_ptr<setVelocityBarNoMove>(new setVelocityBarNoMove())));
+	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("paintCollisionCheckNum"), std::unique_ptr<paintCollisionCheckNum>(new paintCollisionCheckNum())));
+
 
 	//this->showEventOccurCheckClassesInAFrameForDebug();
 

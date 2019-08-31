@@ -5,6 +5,10 @@ setVelocityBarNoMove::setVelocityBarNoMove()
 {
 }
 
+void setVelocityBarNoMove::executeEventExecuteClass()
+{
+}
+
 
 setVelocityBarNoMove::~setVelocityBarNoMove()
 {

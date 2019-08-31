@@ -5,6 +5,7 @@ class paintCollisionCheckNum :
 {
 public:
 	paintCollisionCheckNum();
+	void executeEventExecuteClass() override;
 	virtual ~paintCollisionCheckNum();
 };
 

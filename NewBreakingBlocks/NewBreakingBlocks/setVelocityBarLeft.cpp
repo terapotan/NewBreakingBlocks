@@ -6,6 +6,10 @@ setVelocityBarLeft::setVelocityBarLeft()
 {
 }
 
+void setVelocityBarLeft::executeEventExecuteClass()
+{
+}
+
 
 setVelocityBarLeft::~setVelocityBarLeft()
 {

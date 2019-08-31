@@ -5,6 +5,7 @@ class setVelocityBarRight :
 {
 public:
 	setVelocityBarRight();
+	void executeEventExecuteClass() override;
 	virtual ~setVelocityBarRight();
 };
 
