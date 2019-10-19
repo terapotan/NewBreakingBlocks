@@ -42,7 +42,9 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 	//FIXME:追加の方法が冗長なような、、、
 	//もっとシンプルにできる方法を考えないとだめかもしれない。
 	try {
-		
+		//FIXME:以下の行をこのクラスから追い出したい
+		//データを実際に挿入するクラスと、管理するクラスは別にしたい
+		//そうすればシーンごとに使いまわしが出来る
 		this->eventOccurCheckClassesInAFrame.at(0).reset(new shouldBarMoveCheck());
 		this->eventOccurCheckClassesInAFrame.at(1).reset(new isHitBallAndBar());
 		
@@ -53,6 +55,9 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 		throw exceptionUserInstance;
 	}
 	
+	//FIXME:以下の行をこのクラスから追い出したい
+	//データを実際に挿入するクラスと、管理するクラスは別にしたい
+	//そうすればシーンごとに使いまわしが出来る
 	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarLeft"), std::unique_ptr<setVelocityBarLeft>(new setVelocityBarLeft())));
 	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarRight"), std::unique_ptr<setVelocityBarRight>(new setVelocityBarRight())));
 	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarNoMove"), std::unique_ptr<setVelocityBarNoMove>(new setVelocityBarNoMove())));
