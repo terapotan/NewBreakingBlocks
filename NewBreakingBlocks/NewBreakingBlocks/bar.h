@@ -19,8 +19,8 @@ private:
 	int barHeight_Pixel;
 
 public:
-	bar(const playDisplayImageManagement& playInstance);
-	bar(int barLeftupCoordX, int barLeftupCoordY, const playDisplayImageManagement& playInstance);
+	bar(std::shared_ptr<playDisplayImageManagement> playInstance);
+	bar(int barLeftupCoordX, int barLeftupCoordY, std::shared_ptr<playDisplayImageManagement> playInstance);
 
 	void setBarCoordinate(int x, int y);
 	int getBarCoordinateX();

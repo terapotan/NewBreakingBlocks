@@ -5,13 +5,13 @@ extendException::extendException()
 {
 }
 
-std::string extendException::getDetailThisException()
+std::string extendException::getDetailThisException() const
 {
-	return std::string("例外発生");
+	return std::string("何らかのユーザー定義例外が発生しました。");
 }
 
 
-void extendException::setThrowExceptionPlace(std::string fullPathFileName,std::string fileLine)
+void extendException::setThrowExceptionPlace(std::string fullPathFileName,int fileLine)
 {
 	constexpr const char* pathSeparator = "\\";
 	this->throwExceptionLineNumber = fileLine;
@@ -27,6 +27,21 @@ void extendException::setThrowExceptionPlace(std::string fullPathFileName,std::s
 	fileNamePosition++;
 
 	this->throwExceptionFileName = fullPathFileName.substr(fileNamePosition);
+}
+
+std::string extendException::getThrowExceptionFileName() const
+{
+	return this->throwExceptionFileName;
+}
+
+int extendException::getThrowExceptionLineNumber() const
+{
+	return this->throwExceptionLineNumber;
+}
+
+std::string extendException::getExceptionTypeName() const
+{
+	return std::string("extendException");
 }
 
 extendException::~extendException()

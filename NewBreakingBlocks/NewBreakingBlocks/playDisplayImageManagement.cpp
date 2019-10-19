@@ -13,6 +13,7 @@ inline void ifNullNothingDeleteGraph(int graphicHandle) {
 playDisplayImageManagement::playDisplayImageManagement()
 {
 
+
 	//FIXME:エラー処理が冗長であるため、
 	//もっとシンプルに書けるようにしたい。
 	this->ballImageHandle = LoadGraph("../.././resource/ball.png");
@@ -27,14 +28,20 @@ playDisplayImageManagement::playDisplayImageManagement()
 
 	if (isBallImageLoadFail) {
 		this->ballImageHandle = NULL_GRAPHICHANDLE;
+		imageErrorInstance.setThrowExceptionPlace(__FILE__, __LINE__);
+		imageErrorInstance.setLoadFailureFileName("ball.png");
 		throw imageErrorInstance;
 	}
 	else if (isBarImageLoadFail) {
 		this->barImageHandle = NULL_GRAPHICHANDLE;
+		imageErrorInstance.setThrowExceptionPlace(__FILE__, __LINE__);
+		imageErrorInstance.setLoadFailureFileName("bar.png");
 		throw imageErrorInstance;
 	}
 	else if (isBlockImageLoadFail) {
 		this->blockImageHandle = NULL_GRAPHICHANDLE;
+		imageErrorInstance.setThrowExceptionPlace(__FILE__, __LINE__);
+		imageErrorInstance.setLoadFailureFileName("block.png");
 		throw imageErrorInstance;
 	}
 
