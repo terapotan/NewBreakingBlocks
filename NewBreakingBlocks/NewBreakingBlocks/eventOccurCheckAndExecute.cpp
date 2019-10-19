@@ -45,8 +45,8 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 		//FIXME:以下の行をこのクラスから追い出したい
 		//データを実際に挿入するクラスと、管理するクラスは別にしたい
 		//そうすればシーンごとに使いまわしが出来る
-		this->eventOccurCheckClassesInAFrame.at(0).reset(new shouldBarMoveCheck());
-		this->eventOccurCheckClassesInAFrame.at(1).reset(new isHitBallAndBar());
+		this->eventOccurCheckClassesInAFrame.push_back(std::unique_ptr<shouldBarMoveCheck>(new shouldBarMoveCheck()));
+		this->eventOccurCheckClassesInAFrame.push_back(std::unique_ptr<isHitBallAndBar>(new isHitBallAndBar()));
 		
 	}
 	catch (const std::out_of_range& tmpException) {
@@ -72,8 +72,9 @@ eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 
 void eventOccurCheckAndExecute::executeOccurCheckClasses(managementSceneObjects& sceneObjects)
 {
+	auto firstElementInList = this->eventOccurCheckClassesInAFrame.begin();
 	//1件もeventOccurCheckClassが登録されていない時は何もしない
-	if (this->eventOccurCheckClassesInAFrame.at(0) == nullptr) {
+	if (*firstElementInList == nullptr) {
 		return;
 	}
 
