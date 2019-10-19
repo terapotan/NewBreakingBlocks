@@ -161,48 +161,51 @@
     <ClInclude Include="bar.h" />
     <ClInclude Include="block.h" />
     <ClInclude Include="callUnknownEventExecuteClassException.h" />
-    <ClInclude Include="dummyEventAction1.h" />
-    <ClInclude Include="dummyEventAction2.h" />
-    <ClInclude Include="dummyEventAction3.h" />
-    <ClInclude Include="dummyEventCheck1.h" />
-    <ClInclude Include="dummyEventCheck2.h" />
-    <ClInclude Include="dummyEventCheck3.h" />
     <ClInclude Include="eventExecuteClassInterface.h" />
     <ClInclude Include="eventOccurCheckAndExecute.h" />
     <ClInclude Include="eventOccurCheckClassInterface.h" />
     <ClInclude Include="extendException.h" />
+    <ClInclude Include="isHitBallAndBar.h" />
+    <ClInclude Include="managementSceneObjects.h" />
+    <ClInclude Include="paintCollisionCheckNum.h" />
     <ClInclude Include="playDisplayImageManagement.h" />
     <ClInclude Include="realAndVirtualCoordinateSettings.h" />
     <ClInclude Include="hitJudgementBetweenObjects.h" />
     <ClInclude Include="imageLoadFailureException.h" />
     <ClInclude Include="rectObject.h" />
     <ClInclude Include="setFailureEventOccurCheckClass.h" />
+    <ClInclude Include="setVelocityBarLeft.h" />
+    <ClInclude Include="setVelocityBarNoMove.h" />
+    <ClInclude Include="setVelocityBarRight.h" />
+    <ClInclude Include="shouldBarMoveCheck.h" />
     <ClInclude Include="showErrorToUser.h" />
     <ClInclude Include="softwareInfomation.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="userInputManagement.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ball.cpp" />
     <ClCompile Include="bar.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="callUnknownEventExecuteClassException.cpp" />
-    <ClCompile Include="dummyEventAction1.cpp" />
-    <ClCompile Include="dummyEventAction2.cpp" />
-    <ClCompile Include="dummyEventAction3.cpp" />
-    <ClCompile Include="dummyEventCheck2.cpp" />
-    <ClCompile Include="dummyEventCheck3.cpp" />
     <ClCompile Include="DxLibProjectTemp.cpp" />
-    <ClCompile Include="dummyEventCheck1.cpp" />
     <ClCompile Include="eventExecuteClassInterface.cpp" />
     <ClCompile Include="eventOccurCheckAndExecute.cpp" />
     <ClCompile Include="eventOccurCheckClassInterface.cpp" />
     <ClCompile Include="extendException.cpp" />
     <ClCompile Include="hitJudgementBetweenObjects.cpp" />
     <ClCompile Include="imageLoadFailureException.cpp" />
+    <ClCompile Include="isHitBallAndBar.cpp" />
+    <ClCompile Include="managementSceneObjects.cpp" />
+    <ClCompile Include="paintCollisionCheckNum.cpp" />
     <ClCompile Include="playDisplayImageManagement.cpp" />
     <ClCompile Include="rectObject.cpp" />
     <ClCompile Include="setFailureEventOccurCheckClass.cpp" />
+    <ClCompile Include="setVelocityBarLeft.cpp" />
+    <ClCompile Include="setVelocityBarNoMove.cpp" />
+    <ClCompile Include="setVelocityBarRight.cpp" />
+    <ClCompile Include="shouldBarMoveCheck.cpp" />
     <ClCompile Include="showErrorToUser.cpp" />
     <ClCompile Include="softwareInfomation.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -211,6 +214,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="userInputManagement.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

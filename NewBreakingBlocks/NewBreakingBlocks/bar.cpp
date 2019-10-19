@@ -2,9 +2,9 @@
 #include "realAndVirtualCoordinateSettings.h"
 
 
-bar::bar(const playDisplayImageManagement& playInstance)
+bar::bar(std::shared_ptr<playDisplayImageManagement> playInstance)
 {
-	barImageHandle = playInstance.getBarImageHandle();
+	barImageHandle = playInstance->getBarImageHandle();
 
 	int tmpWidth, tmpHeight;
 	
@@ -13,7 +13,7 @@ bar::bar(const playDisplayImageManagement& playInstance)
 	this->barHeight_Pixel = convertToVirtualCoordinate(tmpHeight);
 }
 
-bar::bar(int barLeftupCoordX, int barLeftupCoordY, const playDisplayImageManagement& playInstance) : bar(playInstance)
+bar::bar(int barLeftupCoordX, int barLeftupCoordY, std::shared_ptr<playDisplayImageManagement> playInstance) : bar(playInstance)
 {
 	this->barLeftupCoordX = barLeftupCoordX;
 	this->barLeftupCoordY = barLeftupCoordY;

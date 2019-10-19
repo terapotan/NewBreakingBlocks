@@ -20,8 +20,8 @@ private:
 	int ballDiamater_Pixel;
 	int ballImageHandle;
 public:
-	ball(const playDisplayImageManagement& playInstance);
-	ball(int ballLeftupCoordX, int ballLeftupCoordY, const playDisplayImageManagement& playInstance);
+	ball(std::shared_ptr<playDisplayImageManagement> playInstance);
+	ball(int ballLeftupCoordX, int ballLeftupCoordY, std::shared_ptr<playDisplayImageManagement> playInstance);
 	void setBallCoordinate(int x, int y);
 	int getBallCoordinateX();
 	int getBallCoordinateY();

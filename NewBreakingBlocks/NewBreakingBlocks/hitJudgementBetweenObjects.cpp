@@ -1,5 +1,5 @@
 #include "hitJudgementBetweenObjects.h"
-
+#include "extendException.h"
 
 bool hitJudgementBetweenObjects::hitJudgeRectAndRect(const rectElements& firstRect, const rectElements& secondRect)
 {

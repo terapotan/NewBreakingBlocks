@@ -1,7 +1,7 @@
 #include "ball.h"
 #include "realAndVirtualCoordinateSettings.h"
 
-ball::ball(const playDisplayImageManagement& playInstance)
+ball::ball(std::shared_ptr<playDisplayImageManagement> playInstance)
 {
 	//ボールの画像として読み込む画像は以下の要件を満たしている必要があります
 	//1:画像の縦幅と横幅が同じ値であり読み込む画像に描画されている図形が円であること
@@ -11,7 +11,7 @@ ball::ball(const playDisplayImageManagement& playInstance)
 	//1と3が満たされないと当たり判定処理が正しく行われない可能性があります
 
 
-	this->ballImageHandle = playInstance.getBallImageHandle();
+	this->ballImageHandle = playInstance->getBallImageHandle();
 
 	int ballImageSizeX, ballImageSizeY;
 	GetGraphSize(ballImageHandle, &ballImageSizeX, &ballImageSizeY);
@@ -19,9 +19,9 @@ ball::ball(const playDisplayImageManagement& playInstance)
 	ballDiamater_Pixel = convertToVirtualCoordinate(ballImageSizeX);
 }
 
-ball::ball(int ballLeftupCoordX, int ballLeftupCoordY, const playDisplayImageManagement& playInstance) : ball(playInstance){
+ball::ball(int ballLeftupCoordX, int ballLeftupCoordY, std::shared_ptr<playDisplayImageManagement> playInstance) : ball(playInstance){
 	this->setBallCoordinate(ballLeftupCoordX, ballLeftupCoordY);
-	this->ballImageHandle = playInstance.getBallImageHandle();
+	this->ballImageHandle = playInstance->getBallImageHandle();
 }
 
 void ball::saveNowObjectStateToRectObject()
