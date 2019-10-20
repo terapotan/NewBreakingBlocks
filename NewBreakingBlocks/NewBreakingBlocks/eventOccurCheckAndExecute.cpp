@@ -36,30 +36,6 @@ void eventOccurCheckAndExecute::showEventExecuteClassesInAFrameForDebug()
 eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 {
 
-	//FIXME:追加の方法が冗長なような、、、
-	//もっとシンプルにできる方法を考えないとだめかもしれない。
-	try {
-		//FIXME:以下の行をこのクラスから追い出したい
-		//データを実際に挿入するクラスと、管理するクラスは別にしたい
-		//そうすればシーンごとに使いまわしが出来る
-
-		
-	}
-	catch (const std::out_of_range& tmpException) {
-		setFailureEventOccurCheckClass exceptionUserInstance;
-		exceptionUserInstance.setThrowExceptionPlace(__FILE__, __LINE__);
-		throw exceptionUserInstance;
-	}
-	
-	//FIXME:以下の行をこのクラスから追い出したい
-	//データを実際に挿入するクラスと、管理するクラスは別にしたい
-	//そうすればシーンごとに使いまわしが出来る
-
-
-
-	//this->showEventOccurCheckClassesInAFrameForDebug();
-
-
 }
 
 
