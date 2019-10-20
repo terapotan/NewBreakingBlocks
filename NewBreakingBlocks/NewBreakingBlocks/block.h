@@ -3,6 +3,7 @@
 class block
 {
 private:
+
 	int blockLeftupCoordX;
 	int blockLeftupCoordY;
 	int blockImageHandle;
