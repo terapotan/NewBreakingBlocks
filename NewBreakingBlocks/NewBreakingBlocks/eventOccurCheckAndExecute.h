@@ -1,5 +1,5 @@
 #pragma once
-#include <array>
+#include <list>
 #include <deque>
 #include <string>
 #include <unordered_map>
@@ -10,7 +10,7 @@
 class eventOccurCheckAndExecute
 {
 private:
-	std::array<std::unique_ptr<eventOccurCheckClassInterface>,2> eventOccurCheckClassesInAFrame;
+	std::list<std::unique_ptr<eventOccurCheckClassInterface>> eventOccurCheckClassesInAFrame;
 	std::deque<std::string> eventExecuteClassesInAFrame;
 	std::unordered_map<std::string, std::unique_ptr<eventExecuteClassInterface>> eventExecuteClassSpecificStringMap;
 	void showEventOccurCheckClassesInAFrameForDebug();
@@ -20,6 +20,9 @@ public:
 	
 	void executeOccurCheckClasses(managementSceneObjects& sceneObjects);
 	void executeEventExecuteClasses(managementSceneObjects& sceneObjects);
+	std::list<std::unique_ptr<eventOccurCheckClassInterface>>& getEventOccurCheckClassList();
+	std::unordered_map<std::string, std::unique_ptr<eventExecuteClassInterface>>& getEventExecuteClassMap();
+
 	virtual ~eventOccurCheckAndExecute();
 
 	eventOccurCheckAndExecute(const eventOccurCheckAndExecute&) = delete;

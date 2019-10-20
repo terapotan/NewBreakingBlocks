@@ -161,6 +161,7 @@
     <ClInclude Include="bar.h" />
     <ClInclude Include="block.h" />
     <ClInclude Include="callUnknownEventExecuteClassException.h" />
+    <ClInclude Include="DxLibProjectTemp.h" />
     <ClInclude Include="eventExecuteClassInterface.h" />
     <ClInclude Include="eventOccurCheckAndExecute.h" />
     <ClInclude Include="eventOccurCheckClassInterface.h" />

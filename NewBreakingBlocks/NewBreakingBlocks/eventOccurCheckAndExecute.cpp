@@ -2,14 +2,11 @@
 #include "callUnknownEventExecuteClassException.h"
 #include "setFailureEventOccurCheckClass.h"
 
-#include "shouldBarMoveCheck.h"
-#include "isHitBallAndBar.h"
 
-#include "setVelocityBarLeft.h"
-#include "setVelocityBarRight.h"
-#include "setVelocityBarNoMove.h"
-#include "paintCollisionCheckNum.h"
 
+
+
+#include <utility>
 
 //FIXME:ヘッダーファイルの取り扱いについて、スコープが最小限になるように修正
 
@@ -39,36 +36,14 @@ void eventOccurCheckAndExecute::showEventExecuteClassesInAFrameForDebug()
 eventOccurCheckAndExecute::eventOccurCheckAndExecute()
 {
 
-	//FIXME:追加の方法が冗長なような、、、
-	//もっとシンプルにできる方法を考えないとだめかもしれない。
-	try {
-		
-		this->eventOccurCheckClassesInAFrame.at(0).reset(new shouldBarMoveCheck());
-		this->eventOccurCheckClassesInAFrame.at(1).reset(new isHitBallAndBar());
-		
-	}
-	catch (const std::out_of_range& tmpException) {
-		setFailureEventOccurCheckClass exceptionUserInstance;
-		exceptionUserInstance.setThrowExceptionPlace(__FILE__, __LINE__);
-		throw exceptionUserInstance;
-	}
-	
-	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarLeft"), std::unique_ptr<setVelocityBarLeft>(new setVelocityBarLeft())));
-	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarRight"), std::unique_ptr<setVelocityBarRight>(new setVelocityBarRight())));
-	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("setVelocityBarNoMove"), std::unique_ptr<setVelocityBarNoMove>(new setVelocityBarNoMove())));
-	(this->eventExecuteClassSpecificStringMap).insert(std::make_pair(std::string("paintCollisionCheckNum"), std::unique_ptr<paintCollisionCheckNum>(new paintCollisionCheckNum())));
-
-
-	//this->showEventOccurCheckClassesInAFrameForDebug();
-
-
 }
 
 
 void eventOccurCheckAndExecute::executeOccurCheckClasses(managementSceneObjects& sceneObjects)
 {
+	auto firstElementInList = this->eventOccurCheckClassesInAFrame.begin();
 	//1件もeventOccurCheckClassが登録されていない時は何もしない
-	if (this->eventOccurCheckClassesInAFrame.at(0) == nullptr) {
+	if (*firstElementInList == nullptr) {
 		return;
 	}
 
@@ -110,6 +85,19 @@ void eventOccurCheckAndExecute::executeEventExecuteClasses(managementSceneObject
 
 	//printfDx("EventAfterQueueListEmpty:%s", "Yes");
 }
+
+std::list<std::unique_ptr<eventOccurCheckClassInterface>>& eventOccurCheckAndExecute::getEventOccurCheckClassList()
+{
+	return eventOccurCheckClassesInAFrame;
+}
+
+std::unordered_map<std::string, std::unique_ptr<eventExecuteClassInterface>>& eventOccurCheckAndExecute::getEventExecuteClassMap()
+{
+	return eventExecuteClassSpecificStringMap;
+}
+
+
+
 
 eventOccurCheckAndExecute::~eventOccurCheckAndExecute()
 {
