@@ -20,6 +20,9 @@ public:
 	
 	void executeOccurCheckClasses(managementSceneObjects& sceneObjects);
 	void executeEventExecuteClasses(managementSceneObjects& sceneObjects);
+	std::list<std::unique_ptr<eventOccurCheckClassInterface>>& getEventOccurCheckClassList();
+	std::unordered_map<std::string, std::unique_ptr<eventExecuteClassInterface>>& getEventExecuteClassMap();
+
 	virtual ~eventOccurCheckAndExecute();
 
 	eventOccurCheckAndExecute(const eventOccurCheckAndExecute&) = delete;
